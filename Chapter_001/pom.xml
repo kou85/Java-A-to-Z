@@ -1,0 +1,12 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>chapter_001</groupId>
+	<packaging>jar</packaging>
+	<version>2.0</version>
+	<parent>
+		<groupId>ru.job4j</groupId>
+		<artifactId>lunior</artifactId>
+		<version>2.0</version>
+		</parent>
+</project>	
+	
