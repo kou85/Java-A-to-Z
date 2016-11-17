@@ -1,72 +1,52 @@
 package calc;
 
 /**
- * Реализует операции калькулятора: сложение, вычитание, умножение, деление. 
- * @author Ivan Konovalov
- * @date 11.11.2016
+ * Реализует операции калькулятора: сложение, вычитание, умножение, деление.
+ * @author Ivan Konovalov.
+ * @since 11.11.2016.
  */
- 
- public class Calculate{
- 
-	private double result;
-	double first;
-	double second;
-	
-	
+ public class Calculator {
 	/**
-	 * Операция сложение.
-	 * @param first, second - аргументы
+	* @param first, second аргументы.
 	*/
-	public void add(first, second){
-	
+ 	private double result;
+	/**
+	* Операция сложение.
+	* @param first - аргумент.
+	* @param second - аргумент.
+	*/
+	public void add(double first, double second) {
 		this.result = first + second;
-	
 	}
-	
 	/**
-	 * Операция вычитания.
-	*/ 
-	 
-	 
-	public void substract(first, second){
-		 
-		 this.result = first - second;
-		 
-	}
-	 
-	/**
-	 * Операция деления.
+	* Операция вычитания.
+	* @param first - аргумент.
+	* @param second - аргумент.
 	*/
-	 
-	public void div(first, second){
-		 
+	public void substract(double first, double second) {
+	this.result = first - second;
+	}
+	/**
+	* Операция деления.
+	* @param first - аргумент.
+	* @param second - аргумент.
+	*/
+	public void div(double first, double second) {
 		 this.result = first / second;
 	}
-	
 	/**
-	 * Операция умножения.
+	* Операция умножения.
+	* @param first - аргумент.
+	* @param second - аргумент.
 	*/
-	
-	public void multiple(first, second){
-		
+	public void multiple(double first, double second) {
 		this.result = first * second;
-		
 	}
-	
 	/**
 	 * Возвращение результата.
-	 *@return result - результат.
+	 * @return result - результат.
 	*/
-	
-	public double getResult(){
+	public double getResult() {
 		return this.result;
 	}
-	
-	
-	
-	
- 
- 
- 
- }
-
+}

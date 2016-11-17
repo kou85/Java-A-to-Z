@@ -1,6 +1,5 @@
 package ua.ikonovalov;
 
-
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -13,22 +12,15 @@ import static org.junit.Assert.assertThat;
  * @since 14.11.16.
  * @version 1.0.
 */
-public class CalculateTest{
-
+public class CalculateTest {
 	/**
 	 * Test add.
 	*/
-	public void whenAddOneToOneThenTo(){
-		
-		ByteArrayOutputStream();
+	@Test
+	public void whenAddOneToOneThenTo() {
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(out));
-		Calculate.maine(null);
+		Calculate.main(null);
 		assertThat(out.toString(), is("Hello World\r\n"));
-		
-	}	
-
-
-
-
-
-} 
+	}
+}

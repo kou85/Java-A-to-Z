@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="D:\Projects\Java-A-to-Z\Chapter_001\src\main\java\ua\ikonovalov\Calculate.java">
+</file>
+<file name="D:\Projects\Java-A-to-Z\Chapter_001\src\main\java\ua\ikonovalov\Calculator.java">
+</file>
+<file name="D:\Projects\Java-A-to-Z\Chapter_001\src\main\java\ua\ikonovalov\package-info.java">
+</file>
+<file name="D:\Projects\Java-A-to-Z\Chapter_001\src\test\java\ua\ikonovalov\CalculateTest.java">
+</file>
+<file name="D:\Projects\Java-A-to-Z\Chapter_001\src\test\java\ua\ikonovalov\package-info.java">
+</file>
+</checkstyle>
