@@ -1,12 +1,13 @@
-ua\ikonovalov\PaintTest.class
 ua\ikonovalov\TurnTest.class
 ua\ikonovalov\FactorialTest.class
 ua\ikonovalov\PointTest.class
-ua\ikonovalov\TriangleTest.class
 ua\ikonovalov\CalculatorTest.class
 ua\ikonovalov\CounterTest.class
-ua\ikonovalov\MaxTest.class
 ua\ikonovalov\SortArrayTest.class
 ua\ikonovalov\RotationArrayTest.class
 ua\ikonovalov\RemoveDublicatesTest.class
 ua\ikonovalov\CalculateTest.class
+ua\ikonovalov\PaintTest.class
+ua\ikonovalov\SearchDublicatesTest.class
+ua\ikonovalov\TriangleTest.class
+ua\ikonovalov\MaxTest.class
