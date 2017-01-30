@@ -1,15 +1,21 @@
-package ua.ikonovalov.models;
+package ua.ikonovalov.tracker.models;
 
+/**
+ * Class Task.
+ * Inherited class from Item.
+ *
+ * @author Konovalov.
+ * @since 30.01.2017.
+ */
 public class Task extends Item{
-	public Task(String name, String desc){
-		this.name = name;
-		this.description = desc;
+
+	/**
+	 * Constructor for creating Task.
+	 * @param name name of task.
+	 * @param description description of task.
+	 * @param dateCreation create time of task.
+	 */
+	public Task(String name, String description, long dateCreation){
+		super(name, description, dateCreation);
 	}
-	public String calculatePrice(){
-		return "100%";
-	}
-	
-	
-	
-	
 }
