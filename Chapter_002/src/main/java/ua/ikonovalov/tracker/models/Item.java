@@ -7,7 +7,7 @@ package ua.ikonovalov.tracker.models;
  * @since 30.01.2017.
  * @version 1.0.
  */
-public class Item{
+public class Item {
 	/**
 	 * The id field.
 	 */
@@ -15,16 +15,16 @@ public class Item{
 	/**
 	 * The name field.
 	 */
-	public String name;
+	private String name;
 	/**
 	 * Description field.
 	 */
-	public String description;
+	private String description;
 	/**
 	 * Creation date field.
 	 */
 
-	public long dateCreation;
+	private long dateCreation;
 	/**
 	 * Creation comment.
 	 */
@@ -39,7 +39,6 @@ public class Item{
 		this.name = name;
 		this.description = description;
 		this.dateCreation = dateCreation;
-		
 	}
 	/**
 	 * Getter method for name field.
@@ -98,14 +97,11 @@ public class Item{
 	public void setDateCreation(long dateCreation) {
 		this.dateCreation = dateCreation;
 	}
-
 	/**
 	 * Setter method for id field.
-	 * @return id.
+	 * @param id id.
 	 */
 	public void setId(String id) {
 		this.id = id;
 	}
-
-
 }

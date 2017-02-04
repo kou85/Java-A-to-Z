@@ -7,7 +7,11 @@ package ua.ikonovalov.profession;
  * @since 23.01.17.
  */
 public class Doctor extends Profession {
-    private boolean patient;
+    /**
+     * Информация о специалисте.
+     * @param patient - пациент.
+     */
+	private boolean patient;
     /**
      * Информация о специалисте.
      * @param name - первое значение.
@@ -15,7 +19,7 @@ public class Doctor extends Profession {
      * @param salary - второе значение.
      * @param specialization - второе значение.
      */
-     public Doctor(String name,int workExperience, int salary, String specialization) {
+     public Doctor(String name, int workExperience, int salary, String specialization) {
         super(name, workExperience, salary, specialization);
          this.patient = patient;
      }

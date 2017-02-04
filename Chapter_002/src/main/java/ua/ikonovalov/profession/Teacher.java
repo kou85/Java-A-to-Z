@@ -7,6 +7,9 @@ package ua.ikonovalov.profession;
  * @since 23.01.17.
  */
 public class Teacher extends Profession {
+	/**
+     * @param student student.
+     */
     private boolean student;
     /**
      * Информация о специалисте.

@@ -7,7 +7,7 @@ package ua.ikonovalov.tracker.models;
  * @author Konovalov.
  * @since 30.01.2017.
  */
-public class Task extends Item{
+public class Task extends Item {
 
 	/**
 	 * Constructor for creating Task.
@@ -15,7 +15,7 @@ public class Task extends Item{
 	 * @param description description of task.
 	 * @param dateCreation create time of task.
 	 */
-	public Task(String name, String description, long dateCreation){
+	public Task(String name, String description, long dateCreation) {
 		super(name, description, dateCreation);
 	}
 }
