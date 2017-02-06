@@ -75,6 +75,15 @@ public class Item {
 	public void setComment(String comment) {
 		this.comments.addComment(comment);
 	}
+
+	/**
+	 * Getter metod of commit.
+	 * @return
+	 */
+	public Comment getComments() {
+		return comments;
+	}
+
 	/**
 	 * Setter method for name field.
 	 * @param name string for set name.

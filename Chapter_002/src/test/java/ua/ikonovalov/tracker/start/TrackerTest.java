@@ -56,9 +56,9 @@ public class TrackerTest {
 	 */
 	@Before
 	public  void infoForTest() {
-		testItemOne = new Task("requestOne", "descriptionOne");
-		testItemEdit = new Task("requestTwo", "descriptionTwo");
-		testItemTwo = new Task("requestThree", "descriptionThree");
+		testItemOne = new Task("requestOne", "descriptionOne", 05022017);
+		testItemEdit = new Task("requestTwo", "descriptionTwo", 05022017);
+		testItemTwo = new Task("requestThree", "descriptionThree", 05022017);
 		trackerTest = new Tracker();
 		comment = new Comment();
 	}
@@ -136,7 +136,7 @@ public class TrackerTest {
 	public void whenAddCommentThenCommentsArrayAIsSameComment() {
 		trackerTest.addItem(testItemOne);
 		trackerTest.addComment(trackerTest.getAll()[firstIndex].getId(), "test");
-		assertThat(trackerTest.getAll()[firstIndex].getComment(), is("test" + System.lineSeparator()));
+		assertThat(trackerTest.getAll()[firstIndex].getComments().getRemark()[0], is("test"));
 	}
 
 }
