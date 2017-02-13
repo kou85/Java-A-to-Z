@@ -146,7 +146,7 @@ public class TrackerTest {
 			trackerTest.addItem(testItemOne);
 			trackerTest.addItem(testItemTwo);
            // Item[] result = trackerTest.getAll();
-            trackerTest.deleteAll(trackerTest.getAll());
+            trackerTest.deleteAll();
             Item[] resultAfterDel = trackerTest.getAll();
             assertThat(null, is(resultAfterDel));;
 	}
