@@ -148,7 +148,6 @@ public class TrackerTest {
            // Item[] result = trackerTest.getAll();
             trackerTest.deleteAll(trackerTest.getAll());
             Item[] resultAfterDel = trackerTest.getAll();
-
             assertThat(null, is(resultAfterDel));;
 	}
 }
