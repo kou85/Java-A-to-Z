@@ -75,7 +75,7 @@ public class Tracker {
 
     }
 
-    public void deleteAll(Item[] items) {
+    public void deleteAll() {
         this.items = new Item[this.items.length];
         this.positionItem = 0;
      }
