@@ -23,8 +23,8 @@ public class SearchDublicatesTest {
     public void whenTheStringArraySearchDublicates() {
         SearchDublicates arr = new SearchDublicates();
         String[] tempArray = {"One", "Two", "One", "Three", "Three", "Four"};
-        String[] result = arr.findDublicates(tempArray);
-        String[] expectResult = {"One", "Two", null, "Three", null, "Four"};
+        boolean result = arr.findDublicates(tempArray);
+        boolean expectResult = true;
         assertThat(result, is(expectResult));
     }
  }

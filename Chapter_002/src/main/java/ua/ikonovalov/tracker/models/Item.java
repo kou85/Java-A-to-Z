@@ -75,9 +75,8 @@ public class Item {
 	public void setComment(String comment) {
 		this.comments.addComment(comment);
 	}
-
 	/**
-	 * Getter metod of commit.
+	 * Getter metod of comments.
 	 * @return
 	 */
 	public Comment getComments() {

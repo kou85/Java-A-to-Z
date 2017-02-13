@@ -138,5 +138,17 @@ public class TrackerTest {
 		trackerTest.addComment(trackerTest.getAll()[firstIndex].getId(), "test");
 		assertThat(trackerTest.getAll()[firstIndex].getComments().getRemark()[0], is("test"));
 	}
+	/**
+	 * Test method dellAll atems class Tracker.
+	 */
+    @Test
+	public void whenAddTwoTasksAndDeleteAllTasks() {
+			trackerTest.addItem(testItemOne);
+			trackerTest.addItem(testItemTwo);
+           // Item[] result = trackerTest.getAll();
+            trackerTest.deleteAll(trackerTest.getAll());
+            Item[] resultAfterDel = trackerTest.getAll();
 
+            assertThat(null, is(resultAfterDel));;
+	}
 }

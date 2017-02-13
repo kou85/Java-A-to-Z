@@ -75,6 +75,12 @@ public class Tracker {
 
     }
 
+    public void deleteAll(Item[] items) {
+        Item[] temp = new Item[items.length];
+        this.items = temp;
+        this.positionItem = 0;
+     }
+
     /**
      * Method search position item in array.
      * @param id string id item.
