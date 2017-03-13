@@ -35,7 +35,7 @@ public class Comment {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        for (int i=0; i<remark.length; i++)
+        for (int i=0; i<position; i++)
         sb.append(remark[i]);
         return  sb.toString();
     }
