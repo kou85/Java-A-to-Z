@@ -1,5 +1,7 @@
 package ua.ikonovalov.tracker.models;
 
+import java.util.Arrays;
+
 /**
  * Class Comment.
  *
@@ -29,11 +31,23 @@ public class Comment {
         return this.remark;
     }
 
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<remark.length; i++)
+        sb.append(remark[i]);
+        return  sb.toString();
+    }
+
+
+
     /**
      * Add method for comment.
      *
      * @param comment string comment.
      */
+
     public void addComment(String comment) {
             if (remark == null) {
                 remark = new String[1];

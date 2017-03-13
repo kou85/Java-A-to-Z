@@ -105,6 +105,9 @@ public class Tracker {
             Item[] temp = new Item[items.length - 1];
             System.arraycopy(items, 0, temp, 0, index);
             System.arraycopy(items, index + 1, temp, index, items.length - index - 1);
+            items = temp;
+            positionItem --;
+
         }
     }
 
