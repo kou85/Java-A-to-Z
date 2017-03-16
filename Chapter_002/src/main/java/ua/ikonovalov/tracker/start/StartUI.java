@@ -16,8 +16,9 @@ public class StartUI {
 					"\n Select: ";
 	private Input input;
 	private Tracker tracker = new Tracker();
-	public StartUI(Input input) {
+	public StartUI(Input input,  Tracker tracker) {
 		this.input = input;
+		this.tracker = tracker;
 	}
 
 	public void init() {
@@ -82,7 +83,7 @@ public class StartUI {
 		task.setId(id);
 		tracker.updateItem(task);
 
-		//if (allItem != null) {
+
 
 
 	}
@@ -119,8 +120,9 @@ public class StartUI {
 	public static void main(String[] args) {
 		//Input input = new StubInput(new String[] {"create stub task"});
 		Input input = new ConsoleInput ();
+		Tracker tracker = new Tracker();
 		//new StartUi(new StubInput(new String[] {"create stub task"})).init()
-		new StartUI(input).init();
+		new StartUI(input, tracker).init();
 	}	
 	
 }
