@@ -17,7 +17,7 @@ import static org.junit.Assert.assertThat;
  *
  * @author Konovalov Ivan
  * @version 1.00
- * @since 30.01.2017
+ * @since 18.03.2017
  */
 
 public class StartUITest {
@@ -62,7 +62,7 @@ public class StartUITest {
 	 */
 	@Test
 	public void whenAddNewItemThenInTrackerIsSameItem() {
-		input = new StubInput(new String[]{"1", "nameOne", "descriptionOne"});
+		input = new StubInput(new String[]{"1", "nameOne", "descriptionOne", "10"});
 		new StartUI(input, trackerTest).init();
 		assertThat(trackerTest.getAll()[0].getName(), is("nameOne"));
 		assertThat(trackerTest.getAll()[0].getDescription(), is("descriptionOne"));
@@ -75,7 +75,7 @@ public class StartUITest {
 	public void whenUpdateItemThenNewItem() {
 		trackerTest.addItem(testItemOne);
 		String id = trackerTest.findByName("nameOne").getId();
-		input = new StubInput(new String[]{"3", id, "nameTwo", "descriptionTwo"});
+		input = new StubInput(new String[]{"3", id, "nameTwo", "descriptionTwo", "10"});
 		new StartUI(input, trackerTest).init();
 		assertThat(trackerTest.getAll()[0].getName(), is("nameTwo"));
 		assertThat(trackerTest.getAll()[0].getDescription(), is("descriptionTwo"));
@@ -88,7 +88,7 @@ public class StartUITest {
 	public void whenAddTwoItemAndDeleteFirstThenResultSecondItem() {
 		trackerTest.addItem(testItemOne);
 		trackerTest.addItem(testItemTwo);
-		input = new StubInput(new String[]{"4", trackerTest.getAll()[0].getId()});
+		input = new StubInput(new String[]{"4", trackerTest.getAll()[0].getId(), "10"});
 		new StartUI(input, trackerTest).init();
 		assertThat(trackerTest.getAll()[0].getName(), is("nameTwo"));
 		assertThat(trackerTest.getAll()[0].getDescription(), is("descriptionTwo"));
@@ -101,7 +101,7 @@ public class StartUITest {
 	public void whenAddTwoItemAndFindByNameThenResultThatItemName() {
 		trackerTest.addItem(testItemOne);
 		trackerTest.addItem(testItemTwo);
-		input = new StubInput(new String[]{"6", "nameTwo"});
+		input = new StubInput(new String[]{"6", "nameTwo", "10"});
 		new StartUI(input, trackerTest).init();
 		assertThat(trackerTest.getAll()[1].getName(), is("nameTwo"));
 		assertThat(trackerTest.getAll()[1].getDescription(), is("descriptionTwo"));
@@ -115,7 +115,7 @@ public class StartUITest {
 		trackerTest.addItem(testItemOne);
 		trackerTest.addItem(testItemTwo);
 		String id = trackerTest.findByName("nameOne").getId();
-		input = new StubInput(new String[]{"7", id});
+		input = new StubInput(new String[]{"7", id, "10"});
 		new StartUI(input, trackerTest).init();
 		assertThat(trackerTest.getAll()[0].getName(), is("nameOne"));
 		assertThat(trackerTest.getAll()[0].getDescription(), is("descriptionOne"));
@@ -128,7 +128,7 @@ public class StartUITest {
 	public void whenAddCommentThenResultItemWithThatComment() {
 		trackerTest.addItem(testItemOne);
 		String id = trackerTest.getAll()[0].getId();
-		input = new StubInput(new String[]{"8", id, "testComment"});
+		input = new StubInput(new String[]{"8", id, "testComment", "10"});
 		new StartUI(input, trackerTest).init();
 		assertThat(trackerTest.getAll()[0].getComments(), is("testComment"));
 	}
