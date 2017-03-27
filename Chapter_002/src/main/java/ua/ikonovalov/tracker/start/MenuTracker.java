@@ -130,7 +130,7 @@ public class MenuTracker {
             Item[] allItem = tracker.getAll();
             if (allItem != null) {
                 for (Item item : allItem) {
-                    System.out.println(String.format("%s. %s  %s", item.getId(), item.getName(), item.getDescription(), item.getComments()));
+                    System.out.println(String.format("%s. %s  %s  %s", item.getId(), item.getName(), item.getDescription(), item.getComments()));
 
                     }
                 }
