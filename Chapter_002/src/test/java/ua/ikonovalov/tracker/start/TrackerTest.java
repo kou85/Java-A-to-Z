@@ -136,10 +136,10 @@ public class TrackerTest {
 	public void whenAddCommentThenCommentsArrayAIsSameComment() {
 		trackerTest.addItem(testItemOne);
 		trackerTest.addComment(trackerTest.getAll()[firstIndex].getId(), "test");
-		assertThat(trackerTest.getAll()[firstIndex].getComments().getRemark()[0], is("test"));
+		assertThat(trackerTest.getAll()[firstIndex].getComments(), is("test"));
 	}
 	/**
-	 * Test method dellAll atems class Tracker.
+	 * Test method dellAll Items class Tracker.
 	 */
     @Test
 	public void whenAddTwoTasksAndDeleteAllTasks() {
@@ -148,6 +148,6 @@ public class TrackerTest {
            // Item[] result = trackerTest.getAll();
             trackerTest.deleteAll();
             Item[] resultAfterDel = trackerTest.getAll();
-            assertThat(null, is(resultAfterDel));;
+            assertThat(null, is(resultAfterDel));
 	}
 }

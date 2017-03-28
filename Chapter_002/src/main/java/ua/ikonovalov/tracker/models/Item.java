@@ -76,11 +76,21 @@ public class Item {
 		this.comments.addComment(comment);
 	}
 	/**
-	 * Getter metod of comments.
+	 * Getter method of comments.
 	 * @return
 	 */
-	public Comment getComments() {
-		return comments;
+	public String getComments() {
+		String result = "";
+		String[] allRemarks = this.comments.getRemark();
+		if (allRemarks != null) {
+			for (String temp : allRemarks) {
+				if (result != "") {
+					result += System.lineSeparator();
+				}
+				result += temp;
+			}
+		}
+		return result;
 	}
 
 	/**
