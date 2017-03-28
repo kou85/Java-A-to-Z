@@ -188,7 +188,10 @@ public class MenuTracker {
         @Override
         public void execute(Input input, Tracker tracker) {
             String id = input.ask("Please, enter the task's id: ");
-            tracker.deleteItem(id);
+            String answer = input.ask("Are you sure? y/n: ");
+            if (answer.equals("y")) {
+                tracker.deleteItem(id);
+            }
         }
     }
 
@@ -209,7 +212,10 @@ public class MenuTracker {
          */
         @Override
         public void execute(Input input, Tracker tracker) {
+            String answer = input.ask("Are you sure? y/n: ");
+            if (answer.equals("y")) {
             tracker.deleteAll();
+            }
         }
     }
     /**

@@ -51,12 +51,7 @@ public class StartUI {
 		do {
 			menu.show();
 			menu.select(input.ask("Select: ", ranges));
-			if (exitActionKey == 8) {
-				String answer = input.ask("Are you sure? y/n: ");
-				if (answer.equals("y")) {
-					break;
-				}
-			}
+
 		} while (!"y".equals(this.input.ask("Exit? (y/n): ")));
 
 	}
