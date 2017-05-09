@@ -149,7 +149,7 @@ public class TestingPerformanceCollectionTest {
      * @throws Exception Exception when errors test.
      */
     @Test
-    public void whenUsedArrayListCollectionAddAndRemove() throws Exception {
+    public void whenUsedArrayListCollectionAddAndRemoveElements() throws Exception {
         testTimeAdd = TestingPerformanceCollection.add(testArrayList, lineTest, elementAdd);
         testTimeDelete = TestingPerformanceCollection.delete(testArrayList, elementRemove);
         assertThat(testArrayList.get(0), is(testExpectedElement));
@@ -161,7 +161,7 @@ public class TestingPerformanceCollectionTest {
      * @throws Exception Exception when errors test.
      */
     @Test
-    public void whenUsedLinkedListCollectionAddAndRemove() throws Exception {
+    public void whenUsedLinkedListCollectionAddAndRemoveElements() throws Exception {
         testTimeAdd = TestingPerformanceCollection.add(testLinkedList, lineTest, elementAdd);
         testTimeDelete = TestingPerformanceCollection.delete(testLinkedList, elementRemove);
         assertThat(testLinkedList.get(0), is(testExpectedElement));
