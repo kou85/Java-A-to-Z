@@ -10,6 +10,8 @@ package ua.ikonovalov;
 	* @param first, second аргументы.
 	*/
  	private double result;
+
+
 	/**
 	* Операция сложение.
 	* @param first - аргумент.
@@ -18,6 +20,7 @@ package ua.ikonovalov;
 	public void add(double first, double second) {
 		this.result = first + second;
 	}
+
 	/**
 	* Операция вычитания.
 	* @param first - аргумент.
