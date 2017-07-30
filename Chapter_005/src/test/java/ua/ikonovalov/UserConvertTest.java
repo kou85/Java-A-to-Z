@@ -59,7 +59,7 @@ public class UserConvertTest {
 
     }
     @Test
-    public void userConvertTest1() {
+    public void userConvertToMap1() {
 
         testListUser.add(userTwo);
         testListUser.add(userThree);
