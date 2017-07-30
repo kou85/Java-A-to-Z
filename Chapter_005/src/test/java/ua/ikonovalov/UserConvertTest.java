@@ -47,6 +47,7 @@ public class UserConvertTest {
 
     }
 
+
     @Test
     public void userConvertToMap(){
 
@@ -56,5 +57,12 @@ public class UserConvertTest {
         assertThat(expectedResult(), is(testConvert.process(testListUser)));
 
 
+    }
+    @Test
+    public void userConvertTest1() {
+
+        testListUser.add(userTwo);
+        testListUser.add(userThree);
+        assertThat(expectedResult().get(1), is (userTwo));
     }
 }
