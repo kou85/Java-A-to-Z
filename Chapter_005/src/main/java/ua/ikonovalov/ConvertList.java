@@ -19,6 +19,11 @@ public class ConvertList {
         }
         return arrayList;
     }
+	/**
+     * Method converts the sheet arrays in a single Integer worksheet.
+     * @param list collection.
+     * @return collection.
+     */
     public int[][] toArray (List<Integer> list, int rows) {
         int length = list.size() / rows;
         if (list.size() % rows != 0) {
