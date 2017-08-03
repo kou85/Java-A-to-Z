@@ -11,56 +11,56 @@ import static org.junit.Assert.assertThat;
 
 /**
  * Created by Strong on 08.06.17.
+ *
  */
 public class UserConvertTest {
-    private User userOne;
-    private User userTwo;
-    private User userThree;
-    int userOneId = 0;
-    String userOneName = "userOneName";
-    String userOneCity = "userOneCity";
-    int userTwoId = 1;
-    String userTwoName = "userTwoName";
-    String userTwoCity = "userTwoCity";
-    int userThreeId = 2;
-    String userThreeName = "userThreeName";
-    String userThreeCity = "userThreeCity";
+
     private List<User> testListUser;
     private UserConvert testConvert;
 
     @Before
     public void infoTest() {
-        userOne = new User(userOneId, userOneName, userOneCity);
-        userTwo = new User(userTwoId, userTwoName, userTwoCity);
-        userThree = new User(userThreeId, userThreeName, userThreeCity);
+        User userOne;
+        User userTwo;
+        User userThree;
+        userOne = new User(0, "userOneName", "userOneCity");
+        userTwo = new User(2, "userTwoName", "userTwoCity");
+        userThree = new User(3, "userThreeName", "userThreeCity");
         testListUser = new ArrayList<>();
         testConvert = new UserConvert();
 
     }
 
     private HashMap<Integer, User> expectedResult() {
+        User userOne = new User(0, "userOneName", "userOneCity");
         HashMap<Integer, User> expectedHashMap = new HashMap<>();
         expectedHashMap.put(userOne.getId(), userOne);
-        expectedHashMap.put(userTwo.getId(), userTwo);
-        expectedHashMap.put(userThree.getId(), userThree);
         return expectedHashMap;
-
     }
 
 
     @Test
     public void userConvertToMap(){
+        User userOne;
+        User userTwo;
+
+        userOne = new User(0, "userOneName", "userOneCity");
+        userTwo = new User(2, "userTwoName", "userTwoCity");
+
 
         testListUser.add(userOne);
         testListUser.add(userTwo);
-        testListUser.add(userThree);
+
         assertThat(expectedResult(), is(testConvert.process(testListUser)));
 
 
     }
     @Test
     public void userConvertToMap1() {
-
+        User userTwo;
+        User userThree;
+        userTwo = new User(2, "userTwoName", "userTwoCity");
+        userThree = new User(3, "userThreeName", "userThreeCity");
         testListUser.add(userTwo);
         testListUser.add(userThree);
         assertThat(expectedResult().get(1), is (userTwo));
