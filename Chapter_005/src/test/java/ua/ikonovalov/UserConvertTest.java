@@ -20,12 +20,9 @@ public class UserConvertTest {
 
     @Before
     public void infoTest() {
-        User userOne;
-        User userTwo;
-        User userThree;
-        userOne = new User(0, "userOneName", "userOneCity");
-        userTwo = new User(2, "userTwoName", "userTwoCity");
-        userThree = new User(3, "userThreeName", "userThreeCity");
+        User userOne = new User(0, "userOneName", "userOneCity");
+        User userTwo = new User(2, "userTwoName", "userTwoCity");
+        User userThree = new User(3, "userThreeName", "userThreeCity");
         testListUser = new ArrayList<>();
         testConvert = new UserConvert();
 
@@ -41,13 +38,10 @@ public class UserConvertTest {
 
     @Test
     public void userConvertToMap(){
-        User userOne;
-        User userTwo;
 
-        userOne = new User(0, "userOneName", "userOneCity");
-        userTwo = new User(2, "userTwoName", "userTwoCity");
-
-
+        User userOne = new User(0, "userOneName", "userOneCity");
+        User userTwo = new User(2, "userTwoName", "userTwoCity");
+        List <User> testListUser = new ArrayList<>();
         testListUser.add(userOne);
         testListUser.add(userTwo);
 
@@ -57,12 +51,12 @@ public class UserConvertTest {
     }
     @Test
     public void userConvertToMap1() {
-        User userTwo;
-        User userThree;
-        userTwo = new User(2, "userTwoName", "userTwoCity");
-        userThree = new User(3, "userThreeName", "userThreeCity");
+
+        User userTwo = new User(2, "userTwoName", "userTwoCity");
+        User userThree = new User(3, "userThreeName", "userThreeCity");
+        List <User> testListUser = new ArrayList<>();
         testListUser.add(userTwo);
         testListUser.add(userThree);
-        assertThat(expectedResult().get(1), is (userTwo));
+        assertThat(testListUser.get(0), is (userTwo));
     }
 }
