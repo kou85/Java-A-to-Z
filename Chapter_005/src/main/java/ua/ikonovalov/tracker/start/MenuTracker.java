@@ -139,7 +139,9 @@ public class MenuTracker {
          */
         @Override
         public void execute(Input input, Tracker tracker) {
-            Item[] allItem = tracker.getAll();
+
+            List<Item> allItem = tracker.getAll();
+           // Item[] allItem = tracker.getAll();
             if (allItem != null) {
                 for (Item item : allItem) {
                     System.out.println(String.format("%s. %s  %s  %s", item.getId(), item.getName(), item.getDescription(), item.getComments()));

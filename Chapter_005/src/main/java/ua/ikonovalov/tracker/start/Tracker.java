@@ -2,7 +2,9 @@ package ua.ikonovalov.tracker.start;
 
 import ua.ikonovalov.tracker.models.Item;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -14,7 +16,8 @@ public class Tracker {
     /**
      * The item field of the array.
      */
-    private Item[] items;
+    private List <Item> items = new ArrayList<>();
+   // private Item[] items;
 
     /**
      * The field position in the array.
@@ -40,14 +43,16 @@ public class Tracker {
      */
     public void addItem(Item item) {
         item.setId(this.generateId());
-        if (items == null) {
-            items = new Item[1];
+        this.items.add(item);
+       /* if (items == null) {
+           // items = new Item[1];
+            items.add(new Item[1]);
         } else {
             Item[] temp = new Item[positionItem + 1];
             System.arraycopy(items, 0, temp, 0, positionItem);
             this.items = temp;
         }
-        this.items[positionItem++] = item;
+        this.items[positionItem++] = item;*/
     }
 
     /**
@@ -55,9 +60,9 @@ public class Tracker {
      * @param item item.
      */
     public void updateItem(Item item) {
-        for (int index = 0; index != this.positionItem; index++) {
-            if ((this.items[index] != null) && (this.items[index].getId().equals(item.getId()))) {
-                this.items[index] = item;
+        for (int index = 0; index != items.size(); index++) {
+            if ((this.items.get(index) != null) && (this.items.get(index).getId().equals(item.getId()))) {
+                this.items.set(index, item);
                 break;
             }
         }
@@ -68,15 +73,16 @@ public class Tracker {
      * @param id id item.
      */
     public void deleteItem(String id) {
-        int index = getPositionOfId(id);
-        if (index >= 0) {
-            removeIndex(index);
+        Iterator<Item> iterator = items.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getId().equals(id)) {
+                iterator.remove();
+            }
         }
-
     }
 
     public void deleteAll() {
-        this.items = new Item[this.items.length];
+        this.items = new Item[this.items.size()];
         this.positionItem = 0;
      }
 
@@ -88,7 +94,7 @@ public class Tracker {
     private int getPositionOfId(String id) {
         int result = -1;
         for (int index = 0; index <= this.positionItem; index++) {
-            if ((this.items[index] != null) && (this.items[index].getId().equals(id))) {
+            if ((this.items.get(index) != null) && (this.items.get(index).getId().equals(id))) {
                 result = index;
                 break;
             }
@@ -100,7 +106,7 @@ public class Tracker {
      * Method removes a cell array.
      * @param index found id from the method getPositionOfId.
      */
-    private void removeIndex(int index) {
+    /*private void removeIndex(int index) {
         if (index >= 0 && index < items.length) {
             Item[] temp = new Item[items.length - 1];
             System.arraycopy(items, 0, temp, 0, index);
@@ -109,7 +115,7 @@ public class Tracker {
             positionItem --;
 
         }
-    }
+    }*/
 
     /**
      * Method for find item by name.
@@ -146,9 +152,16 @@ public class Tracker {
     /**
      * Receiving all the elements of the method .
      * @return all items.
+     *
      */
-    public Item[] getAll() {
-        return this.positionItem == 0 ? null : Arrays.copyOf(this.items, this.positionItem);
+    public List <Item> getAll() {
+        ArrayList<Item> result = new ArrayList<>();
+        for (int index = 0; index != this.items.size(); index++) {
+            if (this.items.get(index) != null) {
+                result.add(this.items.get(index));
+            }
+        }
+        return result;
     }
 
     /**
@@ -157,9 +170,9 @@ public class Tracker {
      * @param comment comment.
      */
     public void addComment(String id, String comment) {
-        for (int index = 0; index < this.items.length; index++) {
-            if ((this.items[index] != null) && (this.items[index].getId().equals(id))) {
-                this.items[index].setComment(comment);
+        for (int index = 0; index < this.items.size(); index++) {
+            if ((this.items.get(index) != null) && (this.items.get(index).getId().equals(id))) {
+                this.items.get(index).setComment(comment);
                 break;
             }
         }

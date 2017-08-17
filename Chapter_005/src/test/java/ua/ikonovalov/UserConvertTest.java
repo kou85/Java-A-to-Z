@@ -30,8 +30,10 @@ public class UserConvertTest {
 
     private HashMap<Integer, User> expectedResult() {
         User userOne = new User(0, "userOneName", "userOneCity");
+        User userTwo = new User(2, "userTwoName", "userTwoCity");
         HashMap<Integer, User> expectedHashMap = new HashMap<>();
         expectedHashMap.put(userOne.getId(), userOne);
+        expectedHashMap.put(userTwo.getId(), userOne);
         return expectedHashMap;
     }
 
