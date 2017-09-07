@@ -33,7 +33,7 @@ public class UserConvertTest {
         User userTwo = new User(2, "userTwoName", "userTwoCity");
         HashMap<Integer, User> expectedHashMap = new HashMap<>();
         expectedHashMap.put(userOne.getId(), userOne);
-        expectedHashMap.put(userTwo.getId(), userOne);
+        expectedHashMap.put(userTwo.getId(), userTwo);
         return expectedHashMap;
     }
 

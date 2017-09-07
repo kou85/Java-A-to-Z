@@ -82,7 +82,7 @@ public class Tracker {
     }
 
     public void deleteAll() {
-        this.items = new Item[this.items.size()];
+        this.items = new ArrayList<Item>(this.items.size());
         this.positionItem = 0;
      }
 
