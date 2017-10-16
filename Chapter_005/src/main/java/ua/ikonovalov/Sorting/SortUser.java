@@ -56,7 +56,8 @@ public class SortUser {
         Collections.sort(userList, new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {
-                   return o1.getName().compareTo(o2.getName());
+                int i = o1.getName().compareTo(o2.getName());
+                   return i != 0 ? i : Integer.compare(o1.getAge(), o2.getAge());
 
             }
         });
