@@ -83,12 +83,8 @@ public class BankingOperations {
      * @param account account.
      * @throws NullUserException Error if user has no.
      */
-    public void deleteAccountFromUser(User user, Account account) throws NullUserException {
-        if (this.bankMap.containsKey(user)) {
+    public void deleteAccountFromUser(User user, Account account) {
             this.bankMap.get(user).remove(account);
-        } else {
-            throw new NullUserException("User is not found.");
-        }
     }
 
     /**
@@ -99,6 +95,7 @@ public class BankingOperations {
      */
     public List<Account> getUserAccounts(User user) throws NullUserException {
         List<Account> accountListUser;
+
         if (this.bankMap.containsKey(user)) {
             accountListUser = this.bankMap.get(user);
         } else {
