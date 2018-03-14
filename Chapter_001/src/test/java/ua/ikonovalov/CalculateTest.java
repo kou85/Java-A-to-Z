@@ -23,4 +23,6 @@ public class CalculateTest {
 		Calculate.main(null);
 		assertThat(out.toString(), is("Hello World\r\n"));
 	}
+
+
 }
