@@ -1,4 +1,4 @@
-package main.java.ua.ikonovalov;
+package ua.ikonovalov;
 
 import java.util.Iterator;
 /**

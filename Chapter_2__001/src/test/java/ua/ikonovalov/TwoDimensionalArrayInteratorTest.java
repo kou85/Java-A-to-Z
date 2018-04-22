@@ -14,11 +14,11 @@ import static org.hamcrest.Matchers.is;
  * Created by Strong on 05.03.18.
  */
 public class TwoDimensionalArrayInteratorTest {
-    private Iterator<Integer> it;
+    private Iterator it;
 
     @Before
     public void setUp(){
-        it = new main.java.ua.ikonovalov.TwoDimensionalArrayInterator(new int[][]{{1, 2, 3}, {4, 5, 6}});
+        it = new TwoDimensionalArrayInterator(new int[][]{{1, 2, 3}, {4, 5, 6}});
 
     }
 
@@ -64,7 +64,7 @@ public class TwoDimensionalArrayInteratorTest {
 
     @Test(expected = NoSuchElementException.class)
     public void shoulThrowNoSuchElementException () {
-        it = new main.java.ua.ikonovalov.TwoDimensionalArrayInterator(new int[][]{});
+        it = new TwoDimensionalArrayInterator(new int[][]{});
         it.next();
     }
 }
