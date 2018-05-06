@@ -18,7 +18,7 @@ public class TwoDimensionalArrayInterator implements Iterator{
     public boolean hasNext() {
         boolean result = true;
 
-        if (lineArray < 0 || columnArray < 0 || array.length <=  lineArray || array[0].length <= columnArray) {
+        if (array.length <=  lineArray || array[0].length <= columnArray) {
            result = false;
         }
         return result;
@@ -27,11 +27,15 @@ public class TwoDimensionalArrayInterator implements Iterator{
     @Override
     public Object next() {
 
-        int result = array[lineArray][columnArray];
-        if (columnArray == array[lineArray].length - 1) {
-            lineArray += lineArray;
+        int result = array[lineArray][columnArray++];
+        if (columnArray == array[lineArray].length) {
+            lineArray ++;
+            columnArray = 0;
         }
-        columnArray++;
+        if (lineArray == array.length) {
+            columnArray = 0;
+            lineArray = 0;
+        }
 
         return result;
     }
