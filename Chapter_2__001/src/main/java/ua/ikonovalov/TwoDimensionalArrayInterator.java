@@ -21,7 +21,8 @@ public class TwoDimensionalArrayInterator implements Iterator{
         if (array.length <=  lineArray || array[0].length <= columnArray) {
            result = false;
         }
-        return result;
+        return lineArray < array.length;
+      //  return array < data.size();
     }
 
     @Override

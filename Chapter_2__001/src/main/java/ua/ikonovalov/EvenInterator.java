@@ -21,21 +21,19 @@ public class EvenInterator implements Iterator {
 
 
     @Override
-    public boolean hashCode() {
-        return super.hashCode();
+    public boolean hasNext() {
+        boolean result = true;
+
+
+        return false;
+        //  return array < data.size();
     }
 
     @Override
     public Object next() {
-        int result = numbers[lineArray++];
-        if ((numbers[lineArray]%2==0)&&(numbers[lineArray] != 0)) {
-            lineArray ++;
-        }
-        if (lineArray == numbers.length) {
-            lineArray = 0;
-        }
 
-        return result;
+
+        return numbers;
     }
 
 
