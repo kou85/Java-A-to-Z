@@ -10,6 +10,7 @@ public class Calculate {
 	* Метод вывода строки в консоль.
 	* @param args - массив.
 	*/
+
 	public static void main(String[] args) {
 		System.out.println("Hello World");
 	}
