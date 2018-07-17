@@ -3,9 +3,6 @@ package ua.ikonovalov;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
 import org.junit.Before;
 import org.junit.Test;
 
