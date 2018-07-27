@@ -19,10 +19,11 @@ public class EvenIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        boolean result = true;
+        boolean result = false;
         for (int i = lineArray; i < numbers.length; i++) {
-            if ((numbers[lineArray] % 2) != 0) {
-                return false;
+            if ((numbers[i] % 2) == 0) {
+                result = true;
+                break;
             }
 
         }
@@ -35,8 +36,14 @@ public class EvenIterator implements Iterator {
             throw new NoSuchElementException();
         }
         hasNext();
+      //  lineArray ++;
 
-        return this.numbers[lineArray];
+
+        return this.numbers[lineArray++];
+
     }
+
+
+
 
 }
