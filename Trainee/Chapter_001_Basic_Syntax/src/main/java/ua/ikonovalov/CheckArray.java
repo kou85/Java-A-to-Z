@@ -6,9 +6,12 @@ package ua.ikonovalov;
 public class CheckArray {
 
     public boolean mono(boolean[] data) {
-        boolean result = false;
+        boolean result = true;
         for (int i = 0; i<data.length; i++) {
-
+            if (data[i] == true) {
+                return result = true;
+            }
+            if
         }
 
     }
