@@ -7,12 +7,13 @@ public class CheckArray {
 
     public boolean mono(boolean[] data) {
         boolean result = true;
-        for (int i = 0; i<data.length; i++) {
-            if (data[i] == true) {
-                return result = true;
+
+        for (int i = 0; i<data.length-1; i++) {
+            if ((data[i] == true && data[i+1] == false) ||  (data[i] == false && data[i+1] == true)){
+               result = false;
             }
-            if
-        }
+
+        } return result;
 
     }
 }
