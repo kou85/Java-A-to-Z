@@ -23,27 +23,23 @@ public class EvenIterator implements Iterator {
         for (int i = lineArray; i < numbers.length; i++) {
             if ((numbers[i] % 2) == 0) {
                 result = true;
+                lineArray = i;
                 break;
             }
-
         }
         return result;
     }
 
     @Override
     public Object next() {
-        if (this.lineArray >= this.numbers.length) {
+        if(!hasNext()) {
             throw new NoSuchElementException();
         }
-        hasNext();
-      //  lineArray ++;
-
-
         return this.numbers[lineArray++];
-
-    }
-
-
-
-
+        }
 }
+
+
+
+
+
