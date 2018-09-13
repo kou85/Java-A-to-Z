@@ -5,6 +5,11 @@ package ua.ikonovalov.Professions;
  */
 public class Teacher extends Professions {
 
+    public Teacher(String name, String specialization, int experience, int salary) {
+        super (name, specialization, experience, salary);
+
+    }
+
     public void learnStudent(Student name) {
 
     }

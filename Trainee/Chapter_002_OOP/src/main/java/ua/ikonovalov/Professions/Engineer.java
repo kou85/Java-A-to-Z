@@ -5,6 +5,10 @@ package ua.ikonovalov.Professions;
  */
 public class Engineer extends Professions {
 
+    public Engineer(String name, String specialization, int experience, int salary) {
+        super(name, specialization, experience, salary);
+    }
+
     public void buildHouse(House type) {
 
     }

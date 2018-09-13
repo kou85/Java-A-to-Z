@@ -12,6 +12,12 @@ public class Professions {
     private int experience;
     private int salary;
 
+    public Professions(String name, String specialization, int experience, int salary ) {
+        this.name = name;
+        this.specialization = specialization;
+        this.experience = experience;
+        this.salary = salary;
+    }
     /**
      *
      * @return
