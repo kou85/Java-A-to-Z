@@ -2,6 +2,7 @@ package ua.ikonovalov.Tracker.start;
 
 import ua.ikonovalov.Tracker.models.Item;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 /**
@@ -19,6 +20,28 @@ public class Tracker {
         this.items[position++] = item;
         return item;
     }
+    public void editItem(Item itemNew) {
+            for (int index = 0; index!=items.length; ++index) {
+                Item item = items [index];
+                if (item != null && item.getId().equals(itemNew.getId())) {
+                    items[index] = itemNew;
+                    break;
+                }
+            }
+    }
+
+    public void delete(String id) {
+
+    }
+
+    public Item[] findAll() {
+
+    }
+
+    public Item[] findByName(String key) {
+
+    }
+
     protected Item findById(String id) {
         Item result = null;
         for (Item item : items) {
@@ -28,6 +51,10 @@ public class Tracker {
             }
         }
         return result;
+    }
+
+    public Item findById(String id) {
+
     }
 
     String generateId() {
@@ -40,5 +67,13 @@ public class Tracker {
             result[i] = this.items[i];
         }
         return result;
+    }
+
+    private void removeIndex(int index) {
+        if ((index >=0)&&(index < items.length)) {
+            Item[] temp = new Item[items.length-1];
+            System.arraycopy(items, 0, temp, 0, index);
+            System.arraycopy();
+        }
     }
 }
