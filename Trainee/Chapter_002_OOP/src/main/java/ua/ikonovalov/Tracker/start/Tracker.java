@@ -38,7 +38,7 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-
+        return this.position == 0 ? null : Arrays.copyOf(this.items, this.position);
     }
 
     public Item findByName(String key) {
@@ -63,9 +63,7 @@ public class Tracker {
         return result;
     }
 
-    public Item findById(String id) {
 
-    }
 
     String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));
