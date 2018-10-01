@@ -12,14 +12,26 @@ public class Tracker {
     private Item[] items = new Item[10];
     private static final Random RN = new Random();
 
-
+    /**
+     *
+     */
     private int position = 0;
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     public Item add(Item item) {
         item.setId(this.generateId());
         this.items[position++] = item;
         return item;
     }
+
+    /**
+     *
+     * @param itemNew
+     */
     public void editItem(Item itemNew) {
             for (int index = 0; index!=items.length; ++index) {
                 Item item = items [index];
@@ -30,6 +42,10 @@ public class Tracker {
             }
     }
 
+    /**
+     *
+     * @param id
+     */
     public void delete(String id) {
          int index = getPositionOfId(id);
          if (index >= 0) {
@@ -37,10 +53,19 @@ public class Tracker {
          }
     }
 
+    /**
+     *
+     * @return
+     */
     public Item[] findAll() {
         return this.position == 0 ? null : Arrays.copyOf(this.items, this.position);
     }
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     public Item findByName(String key) {
         Item result = null;
         for (Item item : items) {
@@ -52,6 +77,11 @@ public class Tracker {
         return  result;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Item findById(String id) {
         Item result = null;
         for (Item item : items) {
@@ -63,11 +93,18 @@ public class Tracker {
         return result;
     }
 
-
-
+    /**
+     *
+     * @return
+     */
     String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));
     }
+
+    /**
+     *
+     * @return
+     */
 
     public Item[] getAll() {
         Item[] result = new Item[position];
@@ -77,6 +114,11 @@ public class Tracker {
         return result;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     private int getPositionOfId(String id) {
         int result = -1;
         for (int index = 0; index <= this.position; index ++) {
@@ -87,6 +129,11 @@ public class Tracker {
         }
         return result;
     }
+
+    /**
+     *
+     * @param index
+     */
     private void removeIndex(int index) {
         if ((index >=0)&&(index < items.length)) {
             Item[] temp = new Item[items.length-1];
