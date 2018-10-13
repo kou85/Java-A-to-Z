@@ -7,15 +7,15 @@ public class Item {
     private String id;
     private String name;
     private String description;
-    private long create;
+    private String createDate;
 
     public Item() {
 
     }
-    public Item(String name, String description, long create) {
+    public Item(String name, String description, String createDate) {
         this.name = name;
         this.description = description;
-        this.create = create;
+        this.createDate = createDate;
     }
 
     public void setId(String id) {
@@ -39,11 +39,11 @@ public class Item {
         return this.description;
     }
 
-    public void setCreate(long create) {
-        this.create = create;
+    public void setCreateDate(String create) {
+        this.createDate = createDate;
     }
 
-    public long getCreate() {
-        return this.create;
+    public String getCreateDate() {
+        return this.createDate;
     }
 }
