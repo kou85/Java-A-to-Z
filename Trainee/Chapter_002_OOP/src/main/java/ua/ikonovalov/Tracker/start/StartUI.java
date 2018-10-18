@@ -1,6 +1,9 @@
 package ua.ikonovalov.Tracker.start;
 
 import ua.ikonovalov.Tracker.models.*;
+
+import javax.xml.bind.SchemaOutputResolver;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -48,19 +51,33 @@ public class StartUI {
         System.out.println("---------------- Add new item --------------");
         String name = this.input.ask("Please enter name item : ");
         String desc = this.input.ask("Please enter description item" );
+        //Date created Item
         Date date = new Date();
-        String createDate = date.toString();
+        //Date change format dd.MM.yyyy
+        SimpleDateFormat formatForDate = new SimpleDateFormat("dd.MM.yyyy");
+        String createDate = formatForDate.format(date);
         Item item = new Item(name, desc, createDate);
         this.tracker.add(item);
-        System.out.println("---------------- New item with getId : " +item.getName()+" "+ item.getDescription()+ " "+ item.getCreateDate() +" "+ item.getId() + " --------------");
+        System.out.println("---------------- New item info -----------------");
+        System.out.println(" Name / Description / Created Date / ID ");
+        System.out.println("  " + item.getName()+" /  "+ item.getDescription()+ " / "+ item.getCreateDate() +" / "+ item.getId() +"  ");
     }
     private void showAllItems() {
         System.out.println("---------------- All Items ------------------");
+        Item item = new Item();
+        System.out.println("  " + item.getName()+" /  "+ item.getDescription()+ " / "+ item.getCreateDate() +" / "+ item.getId() +"  ");
 
         }
 
     private void showMenu() {
-        System.out.println("Menu");
+        System.out.println("---------------- Menu ------------");
+        System.out.println("0 - Create Item");
+        System.out.println("1 - Show all Items");
+        System.out.println("2 - Edit Item");
+        System.out.println("3 - Delete Item");
+        System.out.println("4 - Find Item by ID");
+        System.out.println("5 - Find Item by Name");
+        System.out.println("6 - Exit");
 
     }
 
