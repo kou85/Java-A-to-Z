@@ -64,8 +64,13 @@ public class StartUI {
     }
     private void showAllItems() {
         System.out.println("---------------- All Items ------------------");
-        Item item = new Item();
-        System.out.println("  " + item.getName()+" /  "+ item.getDescription()+ " / "+ item.getCreateDate() +" / "+ item.getId() +"  ");
+        System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
+        System.out.println();
+        for (Item item : this.tracker.getAll()){
+       // System.out.println(Arrays.asList(this.tracker.getAll()));
+
+        System.out.format("%16s%16s%16s%16s", item.getName(), item.getDescription(), item.getId(), item.getCreateDate());
+            System.out.println();}
 
         }
 
