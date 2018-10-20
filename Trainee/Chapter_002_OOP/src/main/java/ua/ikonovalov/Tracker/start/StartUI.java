@@ -17,8 +17,8 @@ public class StartUI {
     private static final String SHOW = "1";
     private static final String EDIT = "2";
     private static final String DELETE = "3";
-    private static final String FINE_BY_ID = "4";
-    private static final String FINE_BY_NAME = "5";
+    private static final String FIND_BY_ID = "4";
+    private static final String FIND_BY_NAME = "5";
     private static final String EXIT = "6";
 
     public StartUI(Input input, Tracker tracker) {
@@ -35,11 +35,19 @@ public class StartUI {
             this.createItem();
         } else if (SHOW.equals(answer)) {
             this.showAllItems();
+        } else if (EDIT.equals(answer)) {
+            this.editItem();
+        } else if (DELETE.equals(answer)) {
+            this.deleteItem();
+        }else if (FIND_BY_ID .equals(answer)) {
+            this.findItemById();
+        }else if (FIND_BY_NAME .equals(answer)) {
+            this.findItemByName();
         }else if (EXIT.equals(answer)) {
             exit = true;
         }
     }
-        //String name = input.ask("Please enter task-name:");
+
 
         Tracker tracker1 = new Tracker();
         tracker1.add(new Task("first task", "first desc"));
@@ -59,20 +67,57 @@ public class StartUI {
         Item item = new Item(name, desc, createDate);
         this.tracker.add(item);
         System.out.println("---------------- New item info -----------------");
-        System.out.println(" Name / Description / Created Date / ID ");
-        System.out.println("  " + item.getName()+" /  "+ item.getDescription()+ " / "+ item.getCreateDate() +" / "+ item.getId() +"  ");
+        System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
+        System.out.println();
+        System.out.format("%16s%16s%16s%16s", item.getName(), item.getDescription(), item.getId(), item.getCreateDate());
     }
     private void showAllItems() {
         System.out.println("---------------- All Items ------------------");
         System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
         System.out.println();
         for (Item item : this.tracker.getAll()){
-       // System.out.println(Arrays.asList(this.tracker.getAll()));
-
         System.out.format("%16s%16s%16s%16s", item.getName(), item.getDescription(), item.getId(), item.getCreateDate());
-            System.out.println();}
-
+        System.out.println();
         }
+        }
+
+    private void editItem() {
+        System.out.println("---------------- Menu Edit Item ------------------");
+        String id = this.input.ask("Please enter ID item");
+        Item itemEdit = this.tracker.findById(id);
+        String name = this.input.ask("Please enter new name");
+        String desc = this.input.ask("Please enter new description");
+        itemEdit.setName(name);
+        itemEdit.setDescription(desc);
+        this.tracker.editItem(itemEdit);
+        System.out.println();
+
+    }
+
+    private void deleteItem() {
+        System.out.println("---------------- Menu Delete Item  ------------------");
+        String id = this.input.ask("Please enter Id");
+        this.tracker.delete(id);
+        System.out.println("Item id = " + id + " deleted");
+    }
+    private void findItemById() {
+        System.out.println("---------------- Menu Find by Id  ------------------");
+        String id = this.input.ask("Please enter ID item");
+        Item itemFind = this.tracker.findById(id);
+        System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
+        System.out.println();
+        System.out.format("%16s%16s%16s%16s", itemFind.getName(), itemFind.getDescription(), itemFind.getId(), itemFind.getCreateDate());
+        System.out.println();
+    }
+    private void findItemByName() {
+        System.out.println("---------------- Menu Find by Name  ------------------");
+        String name = this.input.ask("Please enter name");
+        Item itemFindName = this.tracker.findByName(name);
+        System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
+        System.out.println();
+        System.out.format("%16s%16s%16s%16s", itemFindName.getName(), itemFindName.getDescription(), itemFindName.getId(), itemFindName.getCreateDate());
+        System.out.println();
+    }
 
     private void showMenu() {
         System.out.println("---------------- Menu ------------");
