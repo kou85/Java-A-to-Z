@@ -27,34 +27,30 @@ public class StartUI {
     }
 
     public void init() {
-    boolean exit = false;
-    while (!exit) {
-        this.showMenu();
-        String answer = this.input.ask("Please enter number menu : ");
-        if (ADD.equals(answer)) {
-            this.createItem();
-        } else if (SHOW.equals(answer)) {
-            this.showAllItems();
-        } else if (EDIT.equals(answer)) {
-            this.editItem();
-        } else if (DELETE.equals(answer)) {
-            this.deleteItem();
-        }else if (FIND_BY_ID .equals(answer)) {
-            this.findItemById();
-        }else if (FIND_BY_NAME .equals(answer)) {
-            this.findItemByName();
-        }else if (EXIT.equals(answer)) {
-            exit = true;
+        boolean exit = false;
+        while (!exit) {
+            this.showMenu();
+            String answer = this.input.ask("Please enter number menu : ");
+            if (ADD.equals(answer)) {
+                this.createItem();
+            } else if (SHOW.equals(answer)) {
+                this.showAllItems();
+            } else if (EDIT.equals(answer)) {
+                this.editItem();
+            } else if (DELETE.equals(answer)) {
+                this.deleteItem();
+            } else if (FIND_BY_ID .equals(answer)) {
+                this.findItemById();
+            } else if (FIND_BY_NAME .equals(answer)) {
+                this.findItemByName();
+            } else if (EXIT.equals(answer)) {
+                exit = true;
+            }
         }
+
     }
 
 
-        Tracker tracker1 = new Tracker();
-        tracker1.add(new Task("first task", "first desc"));
-        for (Item item : tracker1.getAll()) {
-            System.out.println(item.getName());
-        }
-    }
     private void createItem() {
         System.out.println("---------------- Add new item --------------");
         String name = this.input.ask("Please enter name item : ");
