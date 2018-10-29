@@ -11,6 +11,6 @@ public interface Shape {
      *  Method pic.
      * @param shape shape.
      */
-    public String draw(Shape shape);
+     String draw(Shape shape);
 
 }
