@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class StartUI {
     private final Input input;
-    private final Tracker tracker;
+    //private final Tracker tracker;
 
     private static final String ADD = "0";
     private static final String SHOW = "1";
@@ -21,12 +21,16 @@ public class StartUI {
     private static final String FIND_BY_NAME = "5";
     private static final String EXIT = "6";
 
-    public StartUI(Input input, Tracker tracker) {
+  /*  public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
+    }*/
+    public StartUI(Input input) {
+        this.input = input;
+
     }
 
-    public void init() {
+/*    public void init() {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
@@ -48,10 +52,25 @@ public class StartUI {
             }
         }
 
+    }*/
+
+//new init new realise
+    public void init() {
+        Tracker tracker = new Tracker();
+        MenuTracker menu = new MenuTracker(this.input, tracker);
+        menu.fillActions();
+
+        do {
+            menu.show();
+            int key = Integer.valueOf(input.ask("please enter number menu"));
+            menu.select(key);
+            System.out.println();
+        } while (! "y".equals(this.input.ask("Exit program? y/n")));
     }
 
 
-    private void createItem() {
+ /*   private void createItem() {
+
         System.out.println("---------------- Add new item --------------");
         String name = this.input.ask("Please enter name item : ");
         String desc = this.input.ask("Please enter description item" );
@@ -125,12 +144,13 @@ public class StartUI {
         System.out.println("5 - Find Item by Name");
         System.out.println("6 - Exit");
 
-    }
+    }*/
 
     public static void main(String[] args) {
-        //Input input = new StubInput(new String [] {"Create stub task"});
 
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        Input input = new ConsoleInput();
+        new StartUI(input).init();
+       // new StartUI(new ConsoleInput(), new Tracker()).init();
     }
 
 }

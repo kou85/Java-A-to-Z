@@ -31,7 +31,7 @@ public class StartUITest {
             .append("5 - Find Item by Name").append(System.lineSeparator())
             .append("6 - Exit").append(System.lineSeparator()).toString();
 
-    @Test
+ /*   @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
         Input input = new StubInput(new String[]{"0", "test name", "desc", "6"});
         new StartUI(input, tracker).init();
@@ -95,5 +95,5 @@ public class StartUITest {
                 .append("       NameTest2           Desc2   "+ item2.getId()+"        22.05.18").append(System.lineSeparator())
                 .append(menu).toString()));
         System.setOut(stdout);
-    }
+    }*/
 }
