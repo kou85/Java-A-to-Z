@@ -109,13 +109,18 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             System.out.println("---------------- Menu Edit Item ------------------");
             String id = input.ask("Please enter ID item");
-            Item itemEdit = tracker.findById(id);
-            String name = input.ask("Please enter new name");
-            String desc = input.ask("Please enter new description");
-            itemEdit.setName(name);
-            itemEdit.setDescription(desc);
-            tracker.editItem(itemEdit);
-            System.out.println();
+            try {
+                Item itemEdit = tracker.findById(id);
+                String name = input.ask("Please enter new name");
+                String desc = input.ask("Please enter new description");
+                itemEdit.setName(name);
+                itemEdit.setDescription(desc);
+                tracker.editItem(itemEdit);
+                System.out.println();
+
+            } catch (NullPointerException oe) {
+                System.out.println("Please correct enter number ID or first can you create Item");
+            }
 
         }
         public String info() {
@@ -132,10 +137,17 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
+            String statusDelete = " Not found. Please correct enter number ID";
             System.out.println("---------------- Menu Delete Item  ------------------");
             String id = input.ask("Please enter Id");
+            for (Item value : tracker.getAll()) {
+                if (value.getId() != null && value.getId().equals(id)) {
+                    statusDelete = " deleted" ;
+                    break;
+                }
+            }
             tracker.delete(id);
-            System.out.println("Item id = " + id + " deleted");
+            System.out.println("Item id = " + id + statusDelete);
         }
 
         @Override
@@ -155,11 +167,15 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             System.out.println("---------------- Menu Find by Id  ------------------");
             String id = input.ask("Please enter ID item");
-            Item itemFind = tracker.findById(id);
-            System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
-            System.out.println();
-            System.out.format("%16s%16s%16s%16s", itemFind.getName(), itemFind.getDescription(), itemFind.getId(), itemFind.getCreateDate());
-            System.out.println();
+            try {
+                Item itemFind = tracker.findById(id);
+                System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
+                System.out.println();
+                System.out.format("%16s%16s%16s%16s", itemFind.getName(), itemFind.getDescription(), itemFind.getId(), itemFind.getCreateDate());
+                System.out.println();
+            }  catch (NullPointerException oe) {
+            System.out.println("Please correct enter number ID or first can you create Item");
+            }
         }
 
         @Override
@@ -178,11 +194,15 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             System.out.println("---------------- Menu Find by Name  ------------------");
             String name = input.ask("Please enter name");
+            try {
             Item itemFindName = tracker.findByName(name);
             System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
             System.out.println();
             System.out.format("%16s%16s%16s%16s", itemFindName.getName(), itemFindName.getDescription(), itemFindName.getId(), itemFindName.getCreateDate());
             System.out.println();
+            } catch (NullPointerException oe) {
+                System.out.println("Please correct enter name or first can you create Item");
+            }
         }
 
         @Override
