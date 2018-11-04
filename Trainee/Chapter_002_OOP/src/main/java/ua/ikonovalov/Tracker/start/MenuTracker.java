@@ -14,7 +14,9 @@ import java.util.*;
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction [] actions = new UserAction[7];
+    private UserAction [] actions = new UserAction[6];
+
+
 
     /**
      *
@@ -27,12 +29,12 @@ public class MenuTracker {
     }
 
     public void fillActions() {
-        this.actions[0] = this.new AddItem();
+        this.actions[0] = new MenuTracker.AddItem();
         this.actions[1] = new MenuTracker.ShowAllItems();
-        this.actions[2] = new UpdateItem();
-        this.actions[3] = new DeleteItem();
-        this.actions[4] = new FindByIdItem();
-        this.actions[5] = new FindByName();
+        this.actions[2] = new MenuTracker.UpdateItem();
+        this.actions[3] = new MenuTracker.DeleteItem();
+        this.actions[4] = new MenuTracker.FindByIdItem();
+        this.actions[5] = new MenuTracker.FindByName();
     }
     public void select(int key) {
         this.actions[key].execute(this.input, this.tracker);
@@ -46,7 +48,7 @@ public class MenuTracker {
         }
     }
 
-    private class AddItem implements UserAction {
+    private static class AddItem implements UserAction {
 
         public int key() {
             return 0;
@@ -86,11 +88,12 @@ public class MenuTracker {
             System.out.println("---------------- All Items ------------------");
             System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
             System.out.println();
-            for (Item item : tracker.getAll()){
-                System.out.format("%16s%16s%16s%16s", item.getName(), item.getDescription(), item.getId(), item.getCreateDate());
-                System.out.println();
-                        }
-        }
+            for (Item item : tracker.getAll()) {
+                    System.out.format("%16s%16s%16s%16s", item.getName(), item.getDescription(), item.getId(), item.getCreateDate());
+                    System.out.println();
+                }
+            }
+
 
         @Override
         public String info() {
@@ -98,7 +101,7 @@ public class MenuTracker {
         }
     }
 
-    private class UpdateItem implements UserAction {
+    private static class UpdateItem implements UserAction {
 
         public int key() {
             return 2;
@@ -120,7 +123,7 @@ public class MenuTracker {
         }
 
     }
-    private class DeleteItem implements UserAction {
+    private static class DeleteItem implements UserAction {
 
         @Override
         public int key() {
@@ -141,7 +144,7 @@ public class MenuTracker {
         }
     }
 
-    private class FindByIdItem implements UserAction {
+    private static class FindByIdItem implements UserAction {
 
         @Override
         public int key() {
@@ -164,7 +167,7 @@ public class MenuTracker {
             return String.format("%s. %s", this.key(), "Find Item by ID");
         }
     }
-    private class FindByName implements UserAction {
+    private static class FindByName implements UserAction {
 
         @Override
         public int key() {

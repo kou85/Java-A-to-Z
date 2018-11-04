@@ -21,6 +21,7 @@ public class StartUI {
     private static final String FIND_BY_NAME = "5";
     private static final String EXIT = "6";
 
+    private int [] renges = new int[] {0, 1, 2, 3, 4, 5};
   /*  public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
@@ -62,8 +63,9 @@ public class StartUI {
 
         do {
             menu.show();
-            int key = Integer.valueOf(input.ask("please enter number menu"));
-            menu.select(key);
+           // int key = Integer.valueOf(input.ask("Please enter number menu"));
+            //menu.select(key);
+            menu.select(input.ask("Please enter number menu:", renges));
             System.out.println();
         } while (! "y".equals(this.input.ask("Exit program? y/n")));
     }
@@ -148,7 +150,7 @@ public class StartUI {
 
     public static void main(String[] args) {
 
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
         new StartUI(input).init();
        // new StartUI(new ConsoleInput(), new Tracker()).init();
     }
