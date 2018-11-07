@@ -13,7 +13,19 @@ public class StubInput implements Input {
     }
 
     public int ask(String questions, int [] range) {
-       // throw new UnsupportedOperationException("Unsupported operation");
-        return -1;
+        boolean exits = false;
+        int key =Integer.valueOf(this.ask(questions));
+        for (int value: range) {
+            if (value == key){
+                exits = true;
+                break;
+            }
+        }
+       if (!exits) {
+           throw new MenuOutException("Please enter validate data again.%n");
+        } else {
+           return key;
+       }
+
     }
 }
