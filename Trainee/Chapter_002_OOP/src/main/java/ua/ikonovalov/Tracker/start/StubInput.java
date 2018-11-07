@@ -15,14 +15,14 @@ public class StubInput implements Input {
     public int ask(String questions, int [] range) {
         boolean exits = false;
         int key =Integer.valueOf(this.ask(questions));
-        for (int value: range) {
+        for (int value : range) {
             if (value == key){
                 exits = true;
                 break;
             }
         }
        if (!exits) {
-           throw new MenuOutException("Please enter validate data again.%n");
+           throw new MenuOutException("Please enter validate number again.%n");
         } else {
            return key;
        }

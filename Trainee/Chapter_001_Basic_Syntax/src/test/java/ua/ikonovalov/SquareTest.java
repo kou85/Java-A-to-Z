@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
  */
 public class SquareTest {
     @Test
-    public void whenBound4Then14916(){
+    public void whenBound4Then14916() {
         int bound = 4;
         Square square = new Square();
         int[] rst = square.calculate(bound);

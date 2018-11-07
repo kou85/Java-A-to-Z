@@ -8,7 +8,7 @@ public class Counter {
         int summ = 0;
         for (int index = start; index <= finish; index++) {
             if (index % 2 == 0) {
-                summ+=index;
+                summ += index;
             }
         }
                 return summ;

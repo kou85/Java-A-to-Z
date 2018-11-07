@@ -10,7 +10,7 @@ public class Converter {
      * @return euros.
      */
     public int rublesToEuros(int value) {
-        return value/70;
+        return value / 70;
     }
 
     /**
@@ -19,7 +19,7 @@ public class Converter {
      * @return  dollars
      */
     public int rublesToDollars(int value) {
-        return value/60;
+        return value / 60;
     }
 
     /**
@@ -27,8 +27,8 @@ public class Converter {
      * @param value euros
      * @return rubles
      */
-    public int eurosToRubles (int value) {
-        return value*70;
+    public int eurosToRubles(int value) {
+        return value * 70;
     }
 
     /**
@@ -36,8 +36,8 @@ public class Converter {
      * @param value dollars
      * @return rubles
      */
-    public int dollarsToRubles (int value) {
-        return value*60;
+    public int dollarsToRubles(int value) {
+        return value * 60;
     }
 
 }

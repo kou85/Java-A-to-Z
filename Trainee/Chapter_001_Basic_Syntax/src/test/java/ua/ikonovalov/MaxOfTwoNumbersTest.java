@@ -11,7 +11,7 @@ public class MaxOfTwoNumbersTest {
      *
      */
     @Test
-    public void returnMaxOfTwoNumbers(){
+    public void returnMaxOfTwoNumbers() {
         MaxOfTwoNumbers max = new MaxOfTwoNumbers();
         int result = max.maxOfTwoNumbers(2, 7);
         assertThat(result, is(7));

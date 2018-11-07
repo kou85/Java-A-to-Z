@@ -10,9 +10,9 @@ public class FindLoop {
      * @param el
      * @return
      */
-    public int indexOf(int [] data, int el) {
+    public int indexOf(int[] data, int el) {
         int rst = -1;
-        for (int index = 0; index <=data.length; index++ ) {
+        for (int index = 0; index <= data.length; index++) {
             if (data[index] == el) {
                 rst = index;
                 break;

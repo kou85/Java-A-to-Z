@@ -17,7 +17,7 @@ public class CalculatorTest {
         calc.add(1D, 1D);
         double result = calc.getResult();
         double expected = 2D;
-        assertThat(result, is (expected));
+        assertThat(result, is(expected));
     }
 
     /**
@@ -29,7 +29,7 @@ public class CalculatorTest {
         calc.substact(2D, 1D);
         double result = calc.getResult();
         double expected = 1D;
-        assertThat(result, is (expected));
+        assertThat(result, is(expected));
     }
 
     /**

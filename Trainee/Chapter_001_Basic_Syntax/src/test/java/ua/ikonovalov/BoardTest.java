@@ -18,7 +18,7 @@ public class BoardTest {
   }
 
   @Test
-    public void whenPaintBoardWithWidthFiveAndHeightFourThenStringWithFiveColsAndFourRows(){
+    public void whenPaintBoardWithWidthFiveAndHeightFourThenStringWithFiveColsAndFourRows() {
       Board board = new Board();
       String result = board.paint(5, 5);
       final String line = System.getProperty("line.separator");

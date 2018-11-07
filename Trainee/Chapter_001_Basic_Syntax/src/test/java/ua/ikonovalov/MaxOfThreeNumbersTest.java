@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 public class MaxOfThreeNumbersTest {
 
     @Test
-    public void returnMaxOfThreeNumbers(){
+    public void returnMaxOfThreeNumbers() {
         MaxOfThreeNumbers max = new MaxOfThreeNumbers();
         int result = max.maxThreeNumbers(3, 7, 2);
         assertThat(result, is(7));

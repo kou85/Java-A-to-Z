@@ -13,7 +13,7 @@ public class ArrayDeleteDuplicate {
      */
     public String[] removeDuplicate(String[] array) {
        int countDublicates = 0;
-        for (int i = 0; i < array.length-1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             for (int k = i + 1; k < array.length; k++) {
                 if (array[i] != null && array[k] != null && array[i].equals(array[k])) {
                     array[k] = null;

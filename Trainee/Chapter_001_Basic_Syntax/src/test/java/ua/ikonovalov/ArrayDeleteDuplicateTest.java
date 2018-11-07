@@ -12,9 +12,9 @@ public class ArrayDeleteDuplicateTest {
     @Test
     public void whenRemoveDuplicatesThenArrayWithoutDuplicate() {
         ArrayDeleteDuplicate arrayDeleteDuplicate = new ArrayDeleteDuplicate();
-        String [] input = new String[] {"Петя", "Вася", "Петя", "Иван", "Петя"};
-        String [] result = arrayDeleteDuplicate.removeDuplicate(input);
-        String [] expect = new String[] {"Петя", "Вася", "Иван"};
+        String[] input = new String[] {"Петя", "Вася", "Петя", "Иван", "Петя"};
+        String[] result = arrayDeleteDuplicate.removeDuplicate(input);
+        String[] expect = new String[] {"Петя", "Вася", "Иван"};
         assertThat(result, is(expect));
     }
 }

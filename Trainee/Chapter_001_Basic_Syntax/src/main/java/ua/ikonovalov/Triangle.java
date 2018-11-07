@@ -19,7 +19,7 @@ public class Triangle {
 
     public double period(double ab, double bc, double ca) {
 
-        return (ab + bc + ca)/2;
+        return (ab + bc + ca) / 2;
     }
 
     public double area() {
@@ -29,14 +29,14 @@ public class Triangle {
         double ca = this.c.distanceTo(this.a);
         double p = this.period(ab, bc, ca);
 
-        if(this.exist(ab, bc, ca)) {
-            rsl = Math.sqrt(p*(p-ab)*(p-bc)*(p-ca));
+        if (this.exist(ab, bc, ca)) {
+            rsl = Math.sqrt(p * (p - ab) * (p - bc) * (p - ca));
         }
         return rsl;
     }
 
     private boolean exist(double ab, double bc, double ca) {
-        if (ab > 0 && bc > 0 && ca > 0 && (ab + bc) > ca && (bc + ca) > ab && (ca+ ab) > bc) {
+        if (ab > 0 && bc > 0 && ca > 0 && (ab + bc) > ca && (bc + ca) > ab && (ca + ab) > bc) {
             return true;
         }
         return false;

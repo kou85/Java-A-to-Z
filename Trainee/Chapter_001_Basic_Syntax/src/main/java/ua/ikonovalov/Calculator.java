@@ -11,7 +11,7 @@ public class Calculator {
      * @param first
      * @param second
      */
-    void add(double first, double second){
+    void add(double first, double second) {
         this.result = first + second;
     }
 
@@ -29,21 +29,21 @@ public class Calculator {
      * @param first
      * @param second
      */
-    void div (double first, double second) {
+    void div(double first, double second) {
         this.result = first / second;
 
     }
 
     /**
      *
-     * @param fisrt
+     * @param first
      * @param second
      */
-    void multiple(double fisrt, double second) {
-        this.result = fisrt * second;
+    void multiple(double first, double second) {
+        this.result = first * second;
     }
 
-    double getResult(){
+    double getResult() {
         return this.result;
     }
 

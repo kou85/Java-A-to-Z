@@ -4,16 +4,12 @@
 	<artifactId>Java-A-to-Z</artifactId>
 	<packaging>pom</packaging>
 	<version>2.0</version>
-	<name>junior</name>
+	<name>Java-A-to-Z</name>
 	<url>http://job4j.ru/</url>
 		
 	<modules>
-		<module>Chapter_001</module>
-        <module>Chapter_002</module>
-        <module>Chapter_005</module>
-        <module>Junior</module>
-        <module>Trainee</module>
-        <module>Trainee</module>
+		<module>Trainee</module>
+
 
 
     </modules>

@@ -11,21 +11,21 @@ import static org.junit.Assert.assertThat;
 public class FactorialTest {
 
     @Test
-    public void factorialToTen(){
+    public void factorialToTen() {
         Factorial factorial = new Factorial();
         int result = factorial.calc(10);
         assertThat(result, is(3628800));
     }
 
     @Test
-    public void factorialToZero(){
+    public void factorialToZero() {
         Factorial factorial = new Factorial();
         int result = factorial.calc(0);
         assertThat(result, is(1));
     }
 
     @Test
-    public void factorialToOne(){
+    public void factorialToOne() {
         Factorial factorial = new Factorial();
         int result = factorial.calc(1);
         assertThat(result, is(1));

@@ -6,7 +6,7 @@ package ua.ikonovalov.Tracker.start;
  * @since 04.11.18
  * @version 1.0
  */
-public class ValidateInput implements Input{
+public class ValidateInput implements Input {
 
     private final Input input;
     public ValidateInput(final Input input) {

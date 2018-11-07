@@ -11,7 +11,7 @@ public class Fit {
      * @return perfect weight man
      */
     public double manWeight(double height) {
-        return (height-100D)*1.15D;
+        return (height - 100D) * 1.15D;
     }
 
     /**
@@ -20,7 +20,7 @@ public class Fit {
      * @return perfect weight woman
      */
     public double womanWeight(double height) {
-        return (height-110D)*1.15D;
+        return (height - 110D) * 1.15D;
     }
 
 }
