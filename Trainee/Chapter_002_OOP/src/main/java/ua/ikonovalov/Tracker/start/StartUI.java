@@ -11,23 +11,24 @@ import java.util.*;
  */
 public class StartUI {
     private final Input input;
-    //private final Tracker tracker;
+    private final Tracker tracker;
 
-    private static final String ADD = "0";
+    /*private static final String ADD = "0";
     private static final String SHOW = "1";
     private static final String EDIT = "2";
     private static final String DELETE = "3";
     private static final String FIND_BY_ID = "4";
     private static final String FIND_BY_NAME = "5";
-    private static final String EXIT = "6";
+    private static final String EXIT = "6";*/
 
     private int [] renges = new int[] {0, 1, 2, 3, 4, 5};
   /*  public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }*/
-    public StartUI(Input input) {
+    public StartUI(Input input, Tracker tracker) {
         this.input = input;
+        this.tracker = tracker;
 
     }
 
@@ -149,9 +150,15 @@ public class StartUI {
     }*/
 
     public static void main(String[] args) {
+        new StartUI(
+                new ValidateInput(
+                        new ConsoleInput()
+                ),
+                new Tracker()
+        ).init();
 
-        Input input = new ValidateInput();
-        new StartUI(input).init();
+       /* Input input = new ValidateInput();
+        new StartUI(input).init();*/
        // new StartUI(new ConsoleInput(), new Tracker()).init();
     }
 

@@ -119,7 +119,7 @@ public class MenuTracker {
                 System.out.println();
 
             } catch (NullPointerException oe) {
-                System.out.println("Please correct enter number ID or first can you create Item");
+                System.out.println("Please correct enter number ID or create Item");
             }
 
         }
@@ -174,7 +174,7 @@ public class MenuTracker {
                 System.out.format("%16s%16s%16s%16s", itemFind.getName(), itemFind.getDescription(), itemFind.getId(), itemFind.getCreateDate());
                 System.out.println();
             }  catch (NullPointerException oe) {
-            System.out.println("Please correct enter number ID or first can you create Item");
+            System.out.println("Please correct enter number ID or create Item");
             }
         }
 
@@ -201,7 +201,7 @@ public class MenuTracker {
             System.out.format("%16s%16s%16s%16s", itemFindName.getName(), itemFindName.getDescription(), itemFindName.getId(), itemFindName.getCreateDate());
             System.out.println();
             } catch (NullPointerException oe) {
-                System.out.println("Please correct enter name or first can you create Item");
+                System.out.println("Please correct enter name or create Item");
             }
         }
 
