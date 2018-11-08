@@ -23,9 +23,7 @@ public class StubInput implements Input {
         }
        if (!exits) {
            throw new MenuOutException("Please enter validate number again.%n");
-        } else {
+        }
            return key;
-       }
-
     }
 }

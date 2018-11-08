@@ -157,6 +157,7 @@ public class StartUI {
                 new Tracker()
         ).init();
 
+
        /* Input input = new ValidateInput();
         new StartUI(input).init();*/
        // new StartUI(new ConsoleInput(), new Tracker()).init();
