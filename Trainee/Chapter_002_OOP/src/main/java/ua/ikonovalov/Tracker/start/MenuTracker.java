@@ -15,8 +15,7 @@ public class MenuTracker {
     private Input input;
     private Tracker tracker;
     private UserAction [] actions = new UserAction[6];
-
-
+    private int position = 0;
 
     /**
      *
@@ -26,15 +25,19 @@ public class MenuTracker {
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
+
     }
 
     public void fillActions() {
-        this.actions[0] = new MenuTracker.AddItem();
-        this.actions[1] = new MenuTracker.ShowAllItems();
-        this.actions[2] = new MenuTracker.UpdateItem();
-        this.actions[3] = new MenuTracker.DeleteItem();
-        this.actions[4] = new MenuTracker.FindByIdItem();
-        this.actions[5] = new MenuTracker.FindByName();
+        this.actions[position++] = new MenuTracker.AddItem();
+        this.actions[position++] = new MenuTracker.ShowAllItems();
+        this.actions[position++] = new MenuTracker.UpdateItem();
+        this.actions[position++] = new MenuTracker.DeleteItem();
+        this.actions[position++] = new MenuTracker.FindByIdItem();
+        this.actions[position++] = new MenuTracker.FindByName();
+    }
+    public void addAction(UserAction action) {
+        this.actions[position++] = action;
     }
     public void select(int key) {
         this.actions[key].execute(this.input, this.tracker);
@@ -119,9 +122,8 @@ public class MenuTracker {
                 System.out.println();
 
             } catch (NullPointerException oe) {
-                System.out.println("Please correct enter number ID or create Item");
+                System.out.println("Please correct enter number ID");
             }
-
         }
         public String info() {
             return String.format("%s. %s", this.key(), "Edit Item");
@@ -174,7 +176,7 @@ public class MenuTracker {
                 System.out.format("%16s%16s%16s%16s", itemFind.getName(), itemFind.getDescription(), itemFind.getId(), itemFind.getCreateDate());
                 System.out.println();
             }  catch (NullPointerException oe) {
-            System.out.println("Please correct enter number ID or create Item");
+            System.out.println("Please correct enter number ID");
             }
         }
 
@@ -201,7 +203,7 @@ public class MenuTracker {
             System.out.format("%16s%16s%16s%16s", itemFindName.getName(), itemFindName.getDescription(), itemFindName.getId(), itemFindName.getCreateDate());
             System.out.println();
             } catch (NullPointerException oe) {
-                System.out.println("Please correct enter name or create Item");
+                System.out.println("Please correct enter name");
             }
         }
 
