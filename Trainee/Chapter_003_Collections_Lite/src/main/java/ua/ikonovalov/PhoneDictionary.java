@@ -20,6 +20,11 @@ public class PhoneDictionary {
      */
     public List<Person> find(String key) {
         List<Person> result = new ArrayList<>();
+        for (Person value : persons) {
+            if (value.getName().contains(key) || value.getSurname().contains(key) || value.getAddress().contains(key) || value.getPhone().contains(key)) {
+                result.add(value);
+            }  value = null;
+        }
         return result;
     }
 }
