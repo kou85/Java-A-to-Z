@@ -32,9 +32,18 @@ public class ValidateInputTest {
     @Test
     public void whenInvalidInput() {
         ValidateInput input = new ValidateInput(
-                new StubInput(new String[] {"invalid", "1"})
+                new StubInput(new String[] {"Invalid", "1"})
         );
         input.ask("Enter", new int[] {1});
         assertThat(this.mem.toString(), is(String.format("Please enter validate number again%n")));
     }
+    @Test
+    public void whenInvalidNumberInput() {
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[] {"9", "1"})
+        );
+        input.ask("Enter", new int[] {1});
+        assertThat(this.mem.toString(), is(String.format("Please select key from menu%n")));
+    }
+
 }
