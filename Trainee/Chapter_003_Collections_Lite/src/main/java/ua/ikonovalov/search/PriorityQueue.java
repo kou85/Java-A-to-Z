@@ -1,6 +1,6 @@
 package ua.ikonovalov.search;
 
-import java.util.Comparator;
+//import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
@@ -16,9 +16,14 @@ public class PriorityQueue {
      * @param task задача
      */
     public void put(Task task) {
-        //TODO добавить вставку в связанный список.
-        this.tasks.add(task);
-        this.tasks.sort(Comparator.comparing(Task::getPriority));
+        //Вариант использования компаратора
+        //this.tasks.sort(Comparator.comparing(Task::getPriority));
+        int index = 0;
+        for (Task value: tasks) {
+            if (task.getPriority() >= value.getPriority() ) {
+                index++;
+            }
+        } this.tasks.add(index, task);
 
     }
 
