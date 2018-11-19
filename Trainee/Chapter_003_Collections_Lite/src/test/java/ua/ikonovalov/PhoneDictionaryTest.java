@@ -15,18 +15,20 @@ import static org.junit.Assert.assertThat;
 public class PhoneDictionaryTest {
     PhoneDictionary phones = new PhoneDictionary();
 
-    @Test
-    public void whenFindByName() {
+    @Before
+    public void start() {
         phones.add(new Person("Василий", "Али", "88885647829", "Кутузовка"));
         phones.add(new Person("Иван", "Лебедев", "85387373783", "Смоленск"));
+    }
+
+    @Test
+    public void whenFindByName() {
         List <Person> persons = phones.find("Василий");
         assertThat(persons.iterator().next().getSurname(), is("Али"));
     }
 
     @Test
     public void whenFindByLiterals() {
-        phones.add(new Person("Василий", "Али", "88885647829", "Кутузовка"));
-        phones.add(new Person("Иван", "Лебедев", "85387373783", "Смоленск"));
         List <Person> persons = phones.find("а");
         assertThat(persons.iterator().next().getSurname(), is("Али"));
     }
