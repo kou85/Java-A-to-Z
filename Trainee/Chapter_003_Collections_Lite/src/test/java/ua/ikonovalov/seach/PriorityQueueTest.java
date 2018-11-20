@@ -8,7 +8,10 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created by Strong on 15.11.18.
+ * class PriorityQueueTest
+ * @author ikonovalov
+ * @since 15.11.18.
+ * @version 1.1
  */
 public class PriorityQueueTest {
 

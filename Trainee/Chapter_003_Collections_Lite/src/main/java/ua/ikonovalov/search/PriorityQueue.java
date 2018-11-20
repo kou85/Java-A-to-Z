@@ -4,7 +4,10 @@ package ua.ikonovalov.search;
 import java.util.LinkedList;
 
 /**
- * Created by Strong on 15.11.18.
+ * class PriorityQueue
+ * @author ikonovalov
+ * @since 15.11.18.
+ * @version 1.1
  */
 public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
@@ -20,12 +23,17 @@ public class PriorityQueue {
         //this.tasks.sort(Comparator.comparing(Task::getPriority));
         int index = 0;
         for (Task value: tasks) {
-            if (task.getPriority() >= value.getPriority() ) {
-                index++;
+            if (task.getPriority() < value.getPriority()) {
+                break;
             }
-        } this.tasks.add(index, task);
-
+            index++;
+        }
+        this.tasks.add(index, task);
     }
+
+
+
+
 
     public Task take() {
         return this.tasks.poll();
