@@ -1,5 +1,6 @@
 package ua.ikonovalov;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,5 +22,19 @@ public class ConvertList2Array {
                 array[i][j] = list.get(index++);
             }
         } return array;
+    }
+
+    /**
+     * Metod convert List arrays to List one array
+     * @param list
+     * @return
+     */
+    public List<Integer> convert (List<int[]> list) {
+        List<Integer> newList = new ArrayList<>();
+        for (int [] array : list) {
+            for (int value : array) {
+                newList.add(value);
+            }
+        } return newList;
     }
 }
