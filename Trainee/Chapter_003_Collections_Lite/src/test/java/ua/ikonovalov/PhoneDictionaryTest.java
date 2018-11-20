@@ -8,6 +8,7 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 /**
+ * class PhoneDictionaryTest
  * @author Konovalov
  * @version 1
  * @since 14.11.18

@@ -1,7 +1,10 @@
 package ua.ikonovalov.search;
 
 /**
- * Created by Strong on 15.11.18.
+ * class Task
+ * @author ikonovalov
+ * @since 15.11.18.
+ * @version 1.0
  */
 public class Task {
     private String desc;
