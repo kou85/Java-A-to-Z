@@ -9,7 +9,7 @@ import java.util.*;
  * Created by Strong on 14.09.18.
  */
 public class Tracker {
-    private Item[] items = new Item[10];
+    private ArrayList<Item> items = new ArrayList<>();
     private static final Random RN = new Random();
 
     /**
@@ -24,7 +24,8 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[position++] = item;
+        this.items.add(item);
+        position++;
         return item;
     }
 
@@ -33,32 +34,42 @@ public class Tracker {
      * @param itemNew
      */
     public void editItem(Item itemNew) {
-            for (int index = 0; index!=items.length; ++index) {
-                Item item = items [index];
-                if (item != null && item.getId().equals(itemNew.getId())) {
-                    items[index] = itemNew;
-                    break;
-                }
+        Item result = null;
+        for (Item item : items) {
+            if (item != null && item.getId().equals(itemNew.getId())) {
+                result = item;
+                 break;
             }
+        }
+        result.setName(itemNew.getName());
+        result.setId(itemNew.getId());
+        result.setDescription(itemNew.getDescription());
+        result.setCreateDate(itemNew.getCreateDate());
     }
+
 
     /**
      *
      * @param id
      */
     public void delete(String id) {
-         int index = getPositionOfId(id);
-         if (index >= 0) {
-             removeIndex(index);
-         }
+        int indexItemForRemove = -1;
+        for (Item item : this.items) {
+            if ((item != null) && (item.getId().equals(id))) {
+                indexItemForRemove = this.items.indexOf(item);
+                break;
+            }
+        } if (indexItemForRemove >=0) {
+            this.items.remove(indexItemForRemove);
+        }
     }
 
     /**
      *
      * @return
      */
-    public Item[] findAll() {
-        return this.position == 0 ? null : Arrays.copyOf(this.items, this.position);
+    public ArrayList<Item>  findAll() {
+        return this.items;
     }
 
     /**
@@ -105,13 +116,8 @@ public class Tracker {
      *
      * @return
      */
-
-    public Item[] getAll() {
-        Item[] result = new Item[position];
-        for (int i = 0; i!=position; i++) {
-            result[i] = this.items[i];
-        }
-        return result;
+    public ArrayList<Item> getAll() {
+        return this.items;
     }
 
     /**
@@ -119,28 +125,24 @@ public class Tracker {
      * @param id
      * @return
      */
-    private int getPositionOfId(String id) {
+   /*private int getPositionOfId(String id) {
         int result = -1;
-        for (int index = 0; index <= this.position; index ++) {
-            if ((this.items[index] != null) && (this.items[index].getId().equals(id))) {
-                result = index;
+        for (Item value : this.items) {
+            if ((value != null) && (value.getId().equals(id))) {
+                result = this.items.indexOf(value);
                 break;
             }
-        }
-        return result;
-    }
+        } return result;
+    }*/
 
     /**
      *
      * @param index
      */
-    private void removeIndex(int index) {
-        if ((index >=0)&&(index < items.length)) {
-            Item[] temp = new Item[items.length-1];
-            System.arraycopy(items, 0, temp, 0, index);
-            System.arraycopy(items, index + 1, temp, index, items.length - index - 1 );
-            items = temp;
-            position --;
-        }
-    }
+       /* private void removeIndex(int index) {
+            if ((index >=0) && (index < items.size())) {
+                items.remove(index);
+                position --;
+            }
+        }*/
 }

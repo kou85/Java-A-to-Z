@@ -14,7 +14,8 @@ import java.util.*;
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction [] actions = new UserAction[7];
+   // private UserAction [] actions = new UserAction[7];
+    private ArrayList<UserAction> actions = new ArrayList<>();
     private int position = 0;
 
     /**
@@ -29,18 +30,20 @@ public class MenuTracker {
     }
 
     public void fillActions() {
-        this.actions[position++] = new MenuTracker.AddItem(0, "Create Item");
-        this.actions[position++] = new MenuTracker.ShowAllItems(1, "Show all Items");
-        this.actions[position++] = new MenuTracker.UpdateItem(2, "Edit Item");
-        this.actions[position++] = new MenuTracker.DeleteItem(3, "Delete Item");
-        this.actions[position++] = new MenuTracker.FindByIdItem(4, "Find Item by ID");
-        this.actions[position++] = new MenuTracker.FindByName(5, "Find Item by Name");
+        this.actions.add(new MenuTracker.AddItem(0, "Create Item"));
+        this.actions.add(new MenuTracker.ShowAllItems(1, "Show all Items"));
+        this.actions.add(new MenuTracker.UpdateItem(2, "Edit Item"));
+        this.actions.add(new MenuTracker.DeleteItem(3, "Delete Item"));
+        this.actions.add(new MenuTracker.FindByIdItem(4, "Find Item by ID"));
+        this.actions.add(new MenuTracker.FindByName(5, "Find Item by Name"));
     }
+
     public void addAction(UserAction action) {
-        this.actions[position++] = action;
+        this.actions.add(action);
     }
+
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions.get(key).execute(this.input, this.tracker);
     }
 
     public void show() {
@@ -51,9 +54,7 @@ public class MenuTracker {
         }
     }
 
-
     private static class AddItem extends BaseAction {
-
 
         protected AddItem(int key, String name) {
             super(key, name);
@@ -78,9 +79,7 @@ public class MenuTracker {
 
     }
 
-
     private static class ShowAllItems extends BaseAction {
-
 
         protected ShowAllItems(int key, String name) {
             super(key, name);
@@ -96,11 +95,9 @@ public class MenuTracker {
                     System.out.println();
                 }
             }
-
     }
 
     private static class UpdateItem extends BaseAction {
-
 
         protected UpdateItem(int key, String name) {
             super(key, name);
@@ -126,7 +123,6 @@ public class MenuTracker {
     }
 
     private static class DeleteItem extends BaseAction {
-
         protected DeleteItem(int key, String name) {
             super(key, name);
         }
@@ -145,11 +141,9 @@ public class MenuTracker {
             tracker.delete(id);
             System.out.println("Item id = " + id + statusDelete);
         }
-
     }
 
     private static class FindByIdItem extends BaseAction {
-
         protected FindByIdItem(int key, String name) {
             super(key, name);
         }
@@ -168,11 +162,9 @@ public class MenuTracker {
             System.out.println("Please correct enter number ID");
             }
         }
-
     }
 
     private static class FindByName extends BaseAction {
-
         protected FindByName(int key, String name) {
             super(key, name);
         }
@@ -191,7 +183,5 @@ public class MenuTracker {
                 System.out.println("Please correct enter name");
             }
         }
-
     }
-
 }
