@@ -34,10 +34,10 @@ public class Tracker {
      * @param itemNew
      */
     public void editItem(Item itemNew) {
-        for (Item item : items) {
-            if (item != null && item.getId().equals(itemNew.getId())) {
-                this.items.set(this.items.indexOf(item), itemNew);
-                 break;
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index) != null && items.get(index).getId().equals(itemNew.getId())) {
+                this.items.set(index, itemNew);
+                break;
             }
         }
     }
