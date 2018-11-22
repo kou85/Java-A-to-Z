@@ -174,10 +174,13 @@ public class MenuTracker {
             System.out.println("---------------- Menu Find by Name  ------------------");
             String name = input.ask("Please enter name");
             try {
-            Item itemFindName = tracker.findByName(name);
+             List<Item> itemFindName = tracker.findByName(name);
+            //Item itemFindName = tracker.findByName(name);
             System.out.format("%16s%16s%16s%16s", "Name", "Description", "ID", "Date created");
             System.out.println();
-            System.out.format("%16s%16s%16s%16s", itemFindName.getName(), itemFindName.getDescription(), itemFindName.getId(), itemFindName.getCreateDate());
+                for (Item item: itemFindName) {
+                    System.out.format("%16s%16s%16s%16s", item.getName(), item.getDescription(), item.getId(), item.getCreateDate());
+                }
             System.out.println();
             } catch (NullPointerException oe) {
                 System.out.println("Please correct enter name");

@@ -25,7 +25,7 @@ public class Tracker {
     public Item add(Item item) {
         item.setId(this.generateId());
         this.items.add(item);
-        position++;
+       // position++;
         return item;
     }
 
@@ -34,17 +34,12 @@ public class Tracker {
      * @param itemNew
      */
     public void editItem(Item itemNew) {
-        Item result = null;
         for (Item item : items) {
             if (item != null && item.getId().equals(itemNew.getId())) {
-                result = item;
+                this.items.set(this.items.indexOf(item), itemNew);
                  break;
             }
         }
-        result.setName(itemNew.getName());
-        result.setId(itemNew.getId());
-        result.setDescription(itemNew.getDescription());
-        result.setCreateDate(itemNew.getCreateDate());
     }
 
 
@@ -53,14 +48,11 @@ public class Tracker {
      * @param id
      */
     public void delete(String id) {
-        int indexItemForRemove = -1;
-        for (Item item : this.items) {
-            if ((item != null) && (item.getId().equals(id))) {
-                indexItemForRemove = this.items.indexOf(item);
+        for (int index = 0; index < items.size(); index++) {
+            if ((items.get(index) != null) && (items.get(index).getId().equals(id))) {
+                this.items.remove(index);
                 break;
             }
-        } if (indexItemForRemove >=0) {
-            this.items.remove(indexItemForRemove);
         }
     }
 
@@ -77,12 +69,12 @@ public class Tracker {
      * @param key
      * @return
      */
-    public Item findByName(String key) {
-        Item result = null;
+    public List<Item> findByName(String key) {
+        List<Item> result = null;
         for (Item item : items) {
             if ((item != null) && (item.getName().equals(key)))    {
-            result = item;
-            break;
+                result.add(item);
+
             }
         }
         return  result;
