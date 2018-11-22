@@ -64,7 +64,23 @@ public class ListExampl {
 
         //----------- объединение в лист(addAll(Arrays.asList()) и вывод через цикл
         List<User> users2 = new ArrayList<>();
-        users2.addAll(Arrays.asList(new User("petr"), new User("ivan"), new User("fed"),new User("pop"))); //Arrays.asList преобразовывает(добавляет пачку данных в лист)
+        users2.addAll(Arrays.asList(
+                new User("petr"),
+                new User("ivan"),
+                new User("fed"),
+                new User("pop"))); //Arrays.asList преобразовывает(добавляет пачку данных в лист)
+            System.out.println("show Arraylist user2" + users2); //вывели просто лист на экран
+ //--------Sorting
+
+        users2.sort(
+                new Comparator<User>() {
+                    @Override
+                    public int compare(User o1, User o2) {
+                        return o1.name.compareTo(o2.name);
+                    }
+                }
+        );
+        System.out.println("show ArrayList user3 sort" + users2);
         for (User usersI : users2) {
             System.out.println(usersI); //если ту стринг не переопределен то тогда надо usersI.name
         }
@@ -116,8 +132,13 @@ public class ListExampl {
 
         System.out.println("fined 3 index = " + list.indexOf(3));
 
-
-
+        Set<User> users5 = new TreeSet<>();
+        users5.addAll(Arrays.asList(
+                new User("petr"),
+                new User("ivan"),
+                new User("ali"),
+                new User("pop"))); //Arrays.asList преобразовывает(добавляет пачку данных в лист)
+        System.out.println("Sort Set"+ users5);
 
     }
 
