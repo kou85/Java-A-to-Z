@@ -1,6 +1,6 @@
-package ua.ikonovalov.Tracker.start;
+package ua.ikonovalov.tracker.start;
 
-import ua.ikonovalov.Tracker.models.*;
+import ua.ikonovalov.tracker.models.*;
 
 import java.sql.SQLOutput;
 import java.util.*;
@@ -9,13 +9,13 @@ import java.util.*;
  * Created by Strong on 14.09.18.
  */
 public class Tracker {
-    private ArrayList<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
     private static final Random RN = new Random();
 
     /**
      *
      */
-    private int position = 0;
+   // private int position = 0;
 
     /**
      *
@@ -25,7 +25,6 @@ public class Tracker {
     public Item add(Item item) {
         item.setId(this.generateId());
         this.items.add(item);
-       // position++;
         return item;
     }
 
@@ -60,7 +59,7 @@ public class Tracker {
      *
      * @return
      */
-    public ArrayList<Item>  findAll() {
+    public List<Item>  findAll() {
         return this.items;
     }
 
@@ -108,7 +107,7 @@ public class Tracker {
      *
      * @return
      */
-    public ArrayList<Item> getAll() {
+    public List<Item> getAll() {
         return this.items;
     }
 

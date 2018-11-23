@@ -1,4 +1,4 @@
-package ua.ikonovalov.Tracker.start;
+package ua.ikonovalov.tracker.start;
 
 import java.util.*;
 public class ConsoleInput implements Input{

@@ -1,10 +1,10 @@
-package ua.ikonovalov.Tracker.start;
+package ua.ikonovalov.tracker.start;
 /**
  *
  */
 
 import org.junit.Test;
-import ua.ikonovalov.Tracker.models.Item;
+import ua.ikonovalov.tracker.models.Item;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

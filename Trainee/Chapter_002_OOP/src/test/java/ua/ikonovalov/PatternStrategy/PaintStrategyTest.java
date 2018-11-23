@@ -1,4 +1,4 @@
-package ua.ikonovalov.PatternStrategy;
+package ua.ikonovalov.patternStrategy;
 
 import org.junit.After;
 import org.junit.Before;

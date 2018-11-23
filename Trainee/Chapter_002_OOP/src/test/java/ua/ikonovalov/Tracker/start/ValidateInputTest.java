@@ -1,4 +1,4 @@
-package ua.ikonovalov.Tracker.start;
+package ua.ikonovalov.tracker.start;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

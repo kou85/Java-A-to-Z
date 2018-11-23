@@ -1,4 +1,4 @@
-package ua.ikonovalov.Tracker.start;
+package ua.ikonovalov.tracker.start;
 
 public interface Input {
     String ask(String question);

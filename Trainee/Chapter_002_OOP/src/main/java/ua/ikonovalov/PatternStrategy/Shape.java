@@ -1,4 +1,4 @@
-package ua.ikonovalov.PatternStrategy;
+package ua.ikonovalov.patternStrategy;
 
 /**
  * Interface Shape.

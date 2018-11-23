@@ -1,6 +1,6 @@
-package ua.ikonovalov.Tracker.start;
+package ua.ikonovalov.tracker.start;
 
-import ua.ikonovalov.Tracker.models.*;
+import ua.ikonovalov.tracker.models.*;
 
 //import javax.xml.bind.SchemaOutputResolver;
 import java.text.SimpleDateFormat;

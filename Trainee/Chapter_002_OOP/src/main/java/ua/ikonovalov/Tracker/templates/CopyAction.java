@@ -1,4 +1,4 @@
-package ua.ikonovalov.Tracker.templates;
+package ua.ikonovalov.tracker.templates;
 
 /**
  * Created by Strong on 11.11.18.

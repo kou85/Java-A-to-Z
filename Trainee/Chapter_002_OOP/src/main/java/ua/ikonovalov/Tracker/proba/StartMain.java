@@ -1,4 +1,4 @@
-package ua.ikonovalov.Tracker.proba;
+package ua.ikonovalov.tracker.proba;
 
 
 public class StartMain {
