@@ -9,10 +9,9 @@ import java.util.TreeSet;
  */
 public class UserSort {
     Set<User> sort(List<User> o) {
-        Set<User> user = new TreeSet<>(o);
-        //второй вариант копирования из эррей в сет
+         //второй вариант копирования из эррей в сет
        /* Set<User> user1 = new TreeSet<>();
         user1.addAll(o);*/
-        return user;
+        return new TreeSet<User>(o);
     }
 }
