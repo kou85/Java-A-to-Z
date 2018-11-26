@@ -7,7 +7,7 @@ import java.util.Comparator;
  */
 public class ListCompare implements Comparator<String> {
 
-    @Override
+  /*  @Override
     public int compare(String o1, String o2) {
         int min = o1.length();
             if (o1.length() > o2.length()) {
@@ -21,5 +21,23 @@ public class ListCompare implements Comparator<String> {
                 }
             }
         return res;
-    }
+    }*/
+    @Override
+    public int compare(String o1, String o2) {
+        int min = o1.length();
+        if (o1.length() > o2.length()) {
+            min = o2.length();
+        }
+        int res = 0;
+        for (int i = 0; i < min; i++) {
+            res = Character.compare(o1.charAt(i), o2.charAt(i));
+                if(res != 0) {
+                    break;
+            }
+        }
+        if (res == 0) {
+            res = o1.length() - o2.length();
+            }
+        return res;
+        }
 }
