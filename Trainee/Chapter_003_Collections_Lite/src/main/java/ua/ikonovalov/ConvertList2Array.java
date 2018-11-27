@@ -29,9 +29,9 @@ public class ConvertList2Array {
      * @param list
      * @return
      */
-    public List<Integer> convert (List<int[]> list) {
+    public List<Integer> convert(List<int[]> list) {
         List<Integer> newList = new ArrayList<>();
-        for (int [] array : list) {
+        for (int[] array : list) {
             for (int value : array) {
                 newList.add(value);
             }

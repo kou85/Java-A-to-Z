@@ -24,12 +24,12 @@ import java.util.TreeSet;
     /**
      * Method add users to ArrayList and sorts the length of the name
      */
-    public List<User> sortNameLength (List<User> o) {
+    public List<User> sortNameLength(List<User> o) {
         o.sort(
                 new Comparator<User>() {
                     @Override
                     public int compare(User o1, User o2) {
-                        return o1.getName().length()-o2.getName().length();
+                        return o1.getName().length() - o2.getName().length();
                     }
                 }
                );
@@ -38,7 +38,7 @@ import java.util.TreeSet;
     /**
      * Method add users to ArrayList and sorts the name and after the Age
      */
-    public List<User> sortByAllFields (List<User> o) {
+    public List<User> sortByAllFields(List<User> o) {
         o.sort(
                 new Comparator<User>() {
                     @Override
@@ -46,7 +46,8 @@ import java.util.TreeSet;
                         int result = o1.getName().compareTo(o2.getName());
                         if (result == 0) {
                             result = Integer.compare(o1.getAge(), o2.getAge());
-                        }  return result;
+                        }
+                        return result;
                     }
                 }
                );

@@ -65,16 +65,25 @@ public class User implements Comparable<User> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         User user = (User) o;
 
-        if (id != user.id) return false;
-        if (age != user.age) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (id != user.id) {
+            return false;
+        }
+        if (age != user.age) {
+            return false;
+        }
+        if (name != null ? !name.equals(user.name) : user.name != null) {
+            return false;
+        }
         return city != null ? city.equals(user.city) : user.city == null;
-
     }
 
     @Override
@@ -88,11 +97,11 @@ public class User implements Comparable<User> {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", age=" + age +
-                '}';
+        return "User{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", city='" + city + '\''
+                + ", age=" + age
+                + '}';
     }
 }

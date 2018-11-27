@@ -24,13 +24,13 @@ public class PhoneDictionaryTest {
 
     @Test
     public void whenFindByName() {
-        List <Person> persons = phones.find("Василий");
+        List<Person> persons = phones.find("Василий");
         assertThat(persons.iterator().next().getSurname(), is("Али"));
     }
 
     @Test
     public void whenFindByLiterals() {
-        List <Person> persons = phones.find("а");
+        List<Person> persons = phones.find("а");
         assertThat(persons.iterator().next().getSurname(), is("Али"));
     }
 }
