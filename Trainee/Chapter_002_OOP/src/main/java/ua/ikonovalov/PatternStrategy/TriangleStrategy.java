@@ -1,4 +1,4 @@
-package ua.ikonovalov.patternStrategy;
+package ua.ikonovalov.patternstrategy;
 
 public class TriangleStrategy implements Shape {
 

@@ -7,7 +7,7 @@ public class Student {
     private String name;
     private int course;
 
-    public void setName (String name) {
+    public void setName(String name) {
         this.name = name;
     }
     public String getName() {

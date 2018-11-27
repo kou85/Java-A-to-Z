@@ -12,7 +12,7 @@ public class Patient {
      * @param name
      */
     public void setName(String name) {
-        this.name= name;
+        this.name = name;
     }
 
     /**
@@ -51,7 +51,7 @@ public class Patient {
      *
      * @return
      */
-    public String getDiseaseHistory(){
+    public String getDiseaseHistory() {
         return this.diseaseHistory;
     }
 }

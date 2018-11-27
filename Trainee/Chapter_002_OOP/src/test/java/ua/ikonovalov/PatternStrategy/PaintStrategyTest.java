@@ -1,11 +1,11 @@
-package ua.ikonovalov.patternStrategy;
+package ua.ikonovalov.patternstrategy;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.StringJoiner;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -36,7 +36,7 @@ public class PaintStrategyTest {
     public void whenDrawTriangle() {
       //  loadOutput();
         new PaintStrategy(new TriangleStrategy()).draw(new TriangleStrategy());
-        assertThat(new String(this.out.toByteArray()), is( new StringBuilder()
+        assertThat(new String(this.out.toByteArray()), is(new StringBuilder()
         .append("   +   ")
         .append("  +++  ")
         .append(" +++++ ")

@@ -1,1 +1,1 @@
-package ua.ikonovalov.patternStrategy;
+package ua.ikonovalov.patternstrategy;

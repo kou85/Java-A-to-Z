@@ -63,7 +63,7 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             System.out.println("---------------- Add new item --------------");
             String name = input.ask("Please enter name item : ");
-            String desc = input.ask("Please enter description item" );
+            String desc = input.ask("Please enter description item");
             //Date created Item
             Date date = new Date();
             //Date change format dd.MM.yyyy
@@ -134,7 +134,7 @@ public class MenuTracker {
             String id = input.ask("Please enter Id");
             for (Item value : tracker.getAll()) {
                 if (value.getId() != null && value.getId().equals(id)) {
-                    statusDelete = " deleted" ;
+                    statusDelete = " deleted";
                     break;
                 }
             }

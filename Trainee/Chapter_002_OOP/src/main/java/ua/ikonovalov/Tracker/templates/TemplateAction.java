@@ -12,7 +12,7 @@ public abstract class TemplateAction {
         this.finish();
 
     }
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         new TemplateAction() {
             public void start() {
 

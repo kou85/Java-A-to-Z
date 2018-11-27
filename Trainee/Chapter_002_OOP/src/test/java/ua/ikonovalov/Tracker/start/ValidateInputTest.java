@@ -20,12 +20,12 @@ public class ValidateInputTest {
     private final PrintStream out = System.out;
 
     @Before
-    public void LoadMenu() {
+    public void loadMenu() {
         System.setOut(new PrintStream(this.mem));
     }
 
     @After
-    public void LoadSys() {
+    public void loadSys() {
         System.setOut(this.out);
     }
 

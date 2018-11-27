@@ -11,9 +11,9 @@ public class Diagnose {
      *
      * @param diagnose
      */
-    public void setDiagnose (String diagnose) {
+    public void setDiagnose(String diagnose) {
         this.diagnose = diagnose;
-        }
+    }
 
     /**
      *
@@ -22,6 +22,4 @@ public class Diagnose {
     public String getDiagnose() {
         return this.diagnose;
     }
-
-
 }

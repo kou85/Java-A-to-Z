@@ -13,7 +13,7 @@ public class StartUI {
     private final Input input;
     private final Tracker tracker;
 
-    private int [] renges = new int[] {0, 1, 2, 3, 4, 5};
+    private int[] renges = new int[] {0, 1, 2, 3, 4, 5};
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
@@ -30,7 +30,7 @@ public class StartUI {
             menu.show();
             menu.select(input.ask("Please enter number menu:", renges));
             System.out.println();
-        } while (! "y".equals(this.input.ask("Exit program? y/n")));
+        } while (!"y".equals(this.input.ask("Exit program? y/n")));
     }
 
     public static void main(String[] args) {

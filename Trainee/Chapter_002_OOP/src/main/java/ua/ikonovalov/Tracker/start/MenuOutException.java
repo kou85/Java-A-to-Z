@@ -12,6 +12,6 @@ package ua.ikonovalov.tracker.start;
      * @param msg msg message exception.
      */
      public MenuOutException(String msg) {
-         super (msg);
+         super(msg);
      }
-}
+ }

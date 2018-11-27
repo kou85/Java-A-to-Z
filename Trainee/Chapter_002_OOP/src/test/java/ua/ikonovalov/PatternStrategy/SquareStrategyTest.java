@@ -1,4 +1,4 @@
-package ua.ikonovalov.patternStrategy;
+package ua.ikonovalov.patternstrategy;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -12,7 +12,9 @@ import static org.junit.Assert.assertThat;
 public class SquareStrategyTest {
 
     @Test
+
     public void whenDrawSquare() {
+
         SquareStrategy square = new SquareStrategy();
         assertThat(square.draw(square), is(new StringBuilder()
                 .append("+++++")

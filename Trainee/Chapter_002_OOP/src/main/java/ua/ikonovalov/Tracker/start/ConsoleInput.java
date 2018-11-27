@@ -1,7 +1,7 @@
 package ua.ikonovalov.tracker.start;
 
 import java.util.*;
-public class ConsoleInput implements Input{
+public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
 
     public String ask(String question) {
@@ -16,9 +16,11 @@ public class ConsoleInput implements Input{
                 exist = true;
                 break;
             }
-        } if (!exist) {
+        }
+            if (!exist) {
              throw new MenuOutException("Out of menu range");
-         } return key;
+            }
+            return key;
 
      }
 }

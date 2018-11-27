@@ -3,8 +3,10 @@ package ua.ikonovalov.tracker.start;
  *
  */
 
+import org.junit.Before;
 import org.junit.Test;
-import ua.ikonovalov.tracker.models.Item;
+/*
+import ua.ikonovalov.tracker.models.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -30,6 +32,7 @@ public class StartUITest {
             .append("4 - Find Item by ID").append(System.lineSeparator())
             .append("5 - Find Item by Name").append(System.lineSeparator())
             .append("6 - Exit").append(System.lineSeparator()).toString();
+*/
 
  /*   @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
@@ -96,4 +99,4 @@ public class StartUITest {
                 .append(menu).toString()));
         System.setOut(stdout);
     }*/
-}
+//}

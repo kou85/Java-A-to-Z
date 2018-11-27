@@ -6,7 +6,7 @@ package ua.ikonovalov.professions;
 public class Teacher extends Professions {
 
     public Teacher(String name, String specialization, int experience, int salary) {
-        super (name, specialization, experience, salary);
+        super(name, specialization, experience, salary);
 
     }
 

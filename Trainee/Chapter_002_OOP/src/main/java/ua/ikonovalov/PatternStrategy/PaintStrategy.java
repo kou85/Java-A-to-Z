@@ -1,4 +1,4 @@
-package ua.ikonovalov.patternStrategy;
+package ua.ikonovalov.patternstrategy;
 /**
  * class PaintStrategy.
 * @author Konovalov.

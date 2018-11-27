@@ -12,11 +12,11 @@ public class StubInput implements Input {
         return answers[position++];
     }
 
-    public int ask(String questions, int [] range) {
+    public int ask(String questions, int[] range) {
         boolean exits = false;
-        int key =Integer.valueOf(this.ask(questions));
+        int key = Integer.valueOf(this.ask(questions));
         for (int value : range) {
-            if (value == key){
+            if (value == key) {
                 exits = true;
                 break;
             }
