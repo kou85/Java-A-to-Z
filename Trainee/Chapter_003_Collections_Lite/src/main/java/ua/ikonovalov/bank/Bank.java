@@ -2,6 +2,7 @@ package ua.ikonovalov.bank;
 
 import ua.ikonovalov.bank.exceptions.UserException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -13,7 +14,7 @@ import java.util.TreeMap;
  */
 public class Bank {
 
-    Map<User, ArrayList<Account>> base = new TreeMap<>();
+    Map<User, ArrayList<Account>> base = new HashMap<>();
 
     /**
      *
@@ -41,18 +42,13 @@ public class Bank {
      */
     public User getUser(String passport) throws UserException {
         User found = new User();
-        boolean status = false;
         for (User user : this.base.keySet()) {
             if (user.getPasport().equals(passport)) {
                 found = user;
-                status = true;
                 break;
             }
         }
-        if (!status) {
-            throw new UserException("Not found user");
-        }
-        return found;
+         return found;
     }
 
     /**
@@ -60,12 +56,11 @@ public class Bank {
      * @param passport
      * @param account
      */
-    public void addAccountToUser(String passport, Account account) throws UserException {
+    public void addAccountToUser(String passport, Account account) {
         ArrayList<Account> temp = this.base.get(getUser(passport));
         if (temp.indexOf(account) != -1) {
-            throw new UserException("Account added to user");
+            temp.add(account);
         }
-        temp.add(account);
     }
 
     /**
@@ -74,12 +69,11 @@ public class Bank {
      * @param account
      * @throws UserException
      */
-    public void deleteAccountFromUser(String passport, Account account) throws UserException {
+    public void deleteAccountFromUser(String passport, Account account) {
         ArrayList<Account> temp = this.base.get(getUser(passport));
-        if (temp.indexOf(account) < 0) {
-            throw new UserException("No found account");
+        if (temp.indexOf(account) >= 0) {
+            temp.remove(account);
         }
-        temp.remove(account);
     }
     /**
      *
@@ -97,11 +91,11 @@ public class Bank {
      * @return
      * @throws UserException
      */
-    public Account getOneUserAccount(String passport, String requisites) throws UserException {
+    public Account getOneUserAccount(String passport, String requisites){
         ArrayList<Account> accounts = getUserAccounts(passport);
-          int index = accounts.indexOf(new Account(0, passport));
+          int index = accounts.indexOf(new Account(0, requisites));
         if (index < 0) {
-            throw new UserException("Not found Accaunt");
+            return null;
         }
         return accounts.get(index);
     }
@@ -135,5 +129,6 @@ public class Bank {
         return "Bank{" +
                 "base=" + this.base +
                 '}';
+
     }
 }
