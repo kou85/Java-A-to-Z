@@ -91,7 +91,7 @@ public class Bank {
      * @return
      * @throws UserException
      */
-    public Account getOneUserAccount(String passport, String requisites){
+    public Account getOneUserAccount(String passport, String requisites) {
         ArrayList<Account> accounts = getUserAccounts(passport);
           int index = accounts.indexOf(new Account(0, requisites));
         if (index < 0) {
@@ -126,9 +126,9 @@ public class Bank {
 
     @Override
     public String toString() {
-        return "Bank{" +
-                "base=" + this.base +
-                '}';
+        return "Bank{"
+                + "base=" + this.base
+                + '}';
 
     }
 }

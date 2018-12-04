@@ -14,8 +14,8 @@ public class UserTest {
     User first = new User("Ivan", "12345678");
     User second = new User("Ivan", "12345678");
     User third = new User("Ivan", "1234567");
-    User fourth = new User (null, "12345678");
-    User fifth = new User ("Misha", "123");
+    User fourth = new User(null, "12345678");
+    User fifth = new User("Misha", "123");
 
     @Test
     public void whenTwoEqualsThenTrue() {
