@@ -1,11 +1,5 @@
 package ua.ikonovalov.tracker.start;
 
-import ua.ikonovalov.tracker.models.*;
-
-import javax.xml.bind.SchemaOutputResolver;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 /**
  * Created by Strong on 14.09.18.
  */

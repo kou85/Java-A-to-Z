@@ -1,10 +1,13 @@
 package ua.ikonovalov.tracker.start;
 
-import ua.ikonovalov.tracker.models.*;
+import ua.ikonovalov.tracker.models.Item;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 //import javax.xml.bind.SchemaOutputResolver;
-import java.text.SimpleDateFormat;
-import java.util.*;
 /**
  * class MenuTracker.
  * @author Konovalov.

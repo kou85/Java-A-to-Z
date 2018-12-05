@@ -3,8 +3,6 @@ package ua.ikonovalov.tracker.start;
  *
  */
 
-import org.junit.Before;
-import org.junit.Test;
 /*
 import ua.ikonovalov.tracker.models.*;
 

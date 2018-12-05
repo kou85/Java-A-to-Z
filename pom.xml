@@ -9,6 +9,7 @@
 
     <modules>
 		<module>Trainee</module>
+        <module>Junior</module>
     </modules>
 	<dependencies>
 		<dependency>

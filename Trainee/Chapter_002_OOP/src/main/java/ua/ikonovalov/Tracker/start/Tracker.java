@@ -1,9 +1,10 @@
 package ua.ikonovalov.tracker.start;
 
-import ua.ikonovalov.tracker.models.*;
+import ua.ikonovalov.tracker.models.Item;
 
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Strong on 14.09.18.

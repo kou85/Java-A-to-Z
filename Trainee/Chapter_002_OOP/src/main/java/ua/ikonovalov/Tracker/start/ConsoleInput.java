@@ -1,6 +1,6 @@
 package ua.ikonovalov.tracker.start;
 
-import java.util.*;
+import java.util.Scanner;
 public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
 
