@@ -50,9 +50,7 @@ public class Account {
 
         Account account = (Account) o;
 
-        if (Double.compare(account.value, value) != 0) {
-            return false;
-        }
+
         return requisites != null ? requisites.equals(account.requisites) : account.requisites == null;
 
     }

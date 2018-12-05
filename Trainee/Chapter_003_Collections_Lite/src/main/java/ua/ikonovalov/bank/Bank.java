@@ -56,7 +56,7 @@ public class Bank {
      */
     public void addAccountToUser(String passport, Account account) {
         ArrayList<Account> temp = this.base.get(getUser(passport));
-        if (temp.indexOf(account) != -1) {
+        if (temp.indexOf(account) == -1) {
             temp.add(account);
         }
     }

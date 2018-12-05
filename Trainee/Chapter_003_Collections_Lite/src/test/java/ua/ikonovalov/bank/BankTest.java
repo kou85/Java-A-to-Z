@@ -41,7 +41,7 @@ public class BankTest {
         this.bank.getUser("1111");
     }
 
-    @Ignore
+
     @Test
     public void whenAddAccountToUser() {
         this.bank.addUser(new User("Roman", "12345"));
@@ -49,7 +49,7 @@ public class BankTest {
         Account expected =  new Account(50, "1");
         assertThat(this.bank.getOneUserAccount("12345", "1"), is(expected));
     }
-    @Ignore
+
     @Test
     public void whenTransferFromOneUserToSecondThenTrue() {
         this.bank.addUser(new User("Dima", "12345"));
