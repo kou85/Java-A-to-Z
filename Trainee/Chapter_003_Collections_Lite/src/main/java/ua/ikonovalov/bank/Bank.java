@@ -1,10 +1,8 @@
 package ua.ikonovalov.bank;
 
 import ua.ikonovalov.bank.exceptions.UserException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+
+import java.util.*;
 
 /**
  * class Bank
@@ -14,7 +12,7 @@ import java.util.TreeMap;
  */
 public class Bank {
 
-    Map<User, ArrayList<Account>> base = new HashMap<>();
+    public Map<User, ArrayList<Account>> base = new HashMap<>();
 
     /**
      *
@@ -80,7 +78,7 @@ public class Bank {
      * @param passport
      * @return
      */
-    public ArrayList<Account> getUserAccounts(String passport) {
+    public List<Account> getUserAccounts(String passport) {
         return this.base.get(getUser(passport));
     }
 
@@ -92,7 +90,7 @@ public class Bank {
      * @throws UserException
      */
     public Account getOneUserAccount(String passport, String requisites) {
-        ArrayList<Account> accounts = getUserAccounts(passport);
+        List<Account> accounts = getUserAccounts(passport);
           int index = accounts.indexOf(new Account(0, requisites));
         if (index < 0) {
             return null;
