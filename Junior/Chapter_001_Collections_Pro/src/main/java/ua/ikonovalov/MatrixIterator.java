@@ -30,7 +30,7 @@ public class MatrixIterator implements Iterator<Integer> {
         int result = values[lineArray][columnArray++];
         if (columnArray == values[lineArray].length) {
             lineArray++;
-            columnArray =0;
+            columnArray = 0;
         }
 
         return result;

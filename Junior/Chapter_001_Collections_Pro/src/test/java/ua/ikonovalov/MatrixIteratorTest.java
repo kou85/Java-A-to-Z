@@ -12,18 +12,17 @@ import static org.hamcrest.Matchers.is;
  */
 public class MatrixIteratorTest {
 
-
     private Iterator<Integer> it;
     private Iterator<Integer> it2;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         it = new MatrixIterator(new int[][]{{1, 2, 3}, {4, 5, 6}});
         it2 = new MatrixIterator(new int[][]{{1}, {3, 4}, {7}});
     }
 
     @Test
-    public void hasNextNextSequentialInvocationSquare () {
+    public void hasNextNextSequentialInvocationSquare() {
         assertThat(it.hasNext(), is(true));
         assertThat(it.next(), is(1));
         assertThat(it.hasNext(), is(true));
@@ -41,7 +40,7 @@ public class MatrixIteratorTest {
     }
 
     @Test
-    public void testsThatNextMethodDoesntDependsOnPriorHasNextInvocationSquare () {
+    public void testsThatNextMethodDoesntDependsOnPriorHasNextInvocationSquare() {
         assertThat(it.next(), is(1));
         assertThat(it.next(), is(2));
         assertThat(it.next(), is(3));
@@ -51,7 +50,7 @@ public class MatrixIteratorTest {
     }
 
     @Test
-    public void sequentialHasNextInvocationDoesntAffectRetrievalOrderSquare () {
+    public void sequentialHasNextInvocationDoesntAffectRetrievalOrderSquare() {
         assertThat(it.hasNext(), is(true));
         assertThat(it.hasNext(), is(true));
         assertThat(it.next(), is(1));
@@ -65,7 +64,7 @@ public class MatrixIteratorTest {
 
 
     @Test
-    public void testsThatNextMethodDoesntDependsOnPriorHasNextInvocation () {
+    public void testsThatNextMethodDoesntDependsOnPriorHasNextInvocation() {
         assertThat(it2.next(), is(1));
         assertThat(it2.next(), is(3));
         assertThat(it2.next(), is(4));
@@ -73,7 +72,7 @@ public class MatrixIteratorTest {
     }
 
     @Test
-    public void sequentialHasNextInvocationDoesntAffectRetrievalOrder () {
+    public void sequentialHasNextInvocationDoesntAffectRetrievalOrder() {
         assertThat(it2.hasNext(), is(true));
         assertThat(it2.hasNext(), is(true));
         assertThat(it2.next(), is(1));
@@ -83,7 +82,7 @@ public class MatrixIteratorTest {
     }
 
     @Test
-    public void hasNextNextSequentialInvocation () {
+    public void hasNextNextSequentialInvocation() {
         assertThat(it2.hasNext(), is(true));
         assertThat(it2.next(), is(1));
         assertThat(it2.hasNext(), is(true));
