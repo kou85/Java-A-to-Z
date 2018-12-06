@@ -1,11 +1,12 @@
 package ua.ikonovalov;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Strong on 06.12.18.
  */
-public class MatrixIterator implements Iterator {
+public class MatrixIterator implements Iterator<Integer> {
 
     public int[][] values;
     private int lineArray;
@@ -22,16 +23,16 @@ public class MatrixIterator implements Iterator {
     }
 
     @Override
-    public Object next() {
+    public Integer next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
         int result = values[lineArray][columnArray++];
         if (columnArray == values[lineArray].length) {
             lineArray++;
             columnArray =0;
         }
-        if (lineArray == values.length) {
-            columnArray = 0;
-            lineArray = 0;
-        }
+
         return result;
     }
 }
