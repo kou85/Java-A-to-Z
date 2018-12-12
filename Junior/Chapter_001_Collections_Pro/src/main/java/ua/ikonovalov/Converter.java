@@ -28,8 +28,10 @@ public class Converter implements Iterator<Integer> {
 
     @Override
     public boolean hasNext() {
-
-        return instantIterator.hasNext() || iterators.hasNext();
+        if (!instantIterator.hasNext()) {
+            instantIterator = iterators.next();
+        }
+        return instantIterator.hasNext();
     }
 
     @Override

@@ -1,8 +1,5 @@
 package ua.ikonovalov;
 
-/**
- * Created by Strong on 09.12.18.
- */
 
 
 /**
@@ -11,8 +8,8 @@ package ua.ikonovalov;
 public class SimpleArray<T> {
 
 
-    Object[] objects;
-    int index = 0;
+    public Object[] objects;
+    private int index = 0;
 
     public SimpleArray(int size) {
         this.objects = new Object[size];
@@ -33,9 +30,10 @@ public class SimpleArray<T> {
     }
 
     public void delete(int index) {
-        Object[] object2 = new Object[objects.length-1];
         if (index < this.objects.length) {
            this.objects[index] = null;
+            System.arraycopy(objects, index + 1, objects, index, objects.length - 1 - index);
+            this.index--;
         } else {
             throw new ArrayIndexOutOfBoundsException("Please correct index");
         }
