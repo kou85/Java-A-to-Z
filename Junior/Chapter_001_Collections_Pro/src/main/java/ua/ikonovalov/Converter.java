@@ -4,47 +4,39 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Created by Strong on 07.12.18.
+ * class Converter
+ * @autor ikonovalov
+ * @since 11.12.18
  */
-public class Converter implements Iterator<Integer> {
-    /**
-     * Iterator of iterators
-     */
-    private Iterator<Iterator<Integer>> iterators;
-    /**
-     * instant selected iterator
-     */
-    private Iterator<Integer> instantIterator = null;
+public class Converter  {
 
-
+    /**
+     * @param it iterator
+     * @return
+     */
 
     Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
-       this.iterators = it;
-        if (it.hasNext()) {
-            this.instantIterator = it.next();
-        }
-        return this;
-    }
+/**
+ * Anonymous class Iterator
+ */
+        return new Iterator<Integer>() {
+            Iterator<Integer> instantIterator = it.next();
 
-    @Override
-    public boolean hasNext() {
-        if (!instantIterator.hasNext()) {
-            instantIterator = iterators.next();
-        }
-        return instantIterator.hasNext();
-    }
+            @Override
+            public boolean hasNext() {
+                while (!instantIterator.hasNext() && it.hasNext()) {
+                    instantIterator = it.next();
+                }
+                return instantIterator.hasNext();
+            }
 
-    @Override
-    public Integer next() {
-        Integer result;
-        if (instantIterator.hasNext()) {
-            result = instantIterator.next();
-        } else if (iterators.hasNext()) {
-            instantIterator = iterators.next();
-            result = instantIterator.next();
-        } else {
-            throw new NoSuchElementException("No iterators");
-        }
-        return result;
+            @Override
+            public Integer next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return instantIterator.next();
+            }
+        };
     }
 }

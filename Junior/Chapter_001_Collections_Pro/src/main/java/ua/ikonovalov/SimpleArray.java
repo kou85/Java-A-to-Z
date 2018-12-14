@@ -1,11 +1,14 @@
 package ua.ikonovalov;
 
 
-
+import java.util.Iterator;
 /**
- * Created by Strong on 09.12.18.
+ * class SimpleArray
+ * @autor ikonovalov
+ * @since 09.12.18.
  */
-public class SimpleArray<T> {
+
+public class SimpleArray<T> implements Iterable<T> {
 
 
     public Object[] objects;
@@ -19,8 +22,10 @@ public class SimpleArray<T> {
         this.objects[index++] = model;
     }
 
-    public T get(int position) {
-
+    public T get(int position) throws NullPointerException {
+        if (position > index) {
+            throw new NullPointerException("No elements");
+        }
         return (T) this.objects[position];
     }
 
@@ -40,8 +45,20 @@ public class SimpleArray<T> {
     }
 
 
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private int pos = 0;
+            @Override
+            public boolean hasNext() {
+                return pos < index;
+            }
 
-
-
+            @Override
+            public T next() {
+                return (T) objects[pos++];
+            }
+        };
+    }
 }
 

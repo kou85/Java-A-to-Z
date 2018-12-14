@@ -1,5 +1,6 @@
 package ua.ikonovalov;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
@@ -10,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 public class SimpleArrayTest {
     @Test
     public void whenCreateContainerShouldReturnTheSameType() {
-        SimpleArray<String> simple = new SimpleArray<String>(4);
+        SimpleArray<String> simple = new SimpleArray<>(4);
         simple.add("test");
         String result = simple.get(0);
 
@@ -19,11 +20,20 @@ public class SimpleArrayTest {
 
     @Test
     public void whenTypeIntShouldReturnInt() {
-        SimpleArray<Integer> simple = new SimpleArray<Integer>(4);
+        SimpleArray<Integer> simple = new SimpleArray<>(4);
+        simple.add(2);
+        int result = simple.get(0);
+
+        assertThat(result, is(2));
+    }
+
+    @Ignore
+    @Test
+    public void whenTypeIntShouldReturnException() {
+        SimpleArray<Integer> simple = new SimpleArray<>(4);
         simple.add(2);
         int result = simple.get(1);
 
         assertThat(result, is(2));
     }
-
 }
