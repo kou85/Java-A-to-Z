@@ -1,6 +1,5 @@
 package ua.ikonovalov;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
@@ -27,8 +26,8 @@ public class SimpleArrayTest {
         assertThat(result, is(2));
     }
 
-    @Ignore
-    @Test
+
+    @Test(expected = NullPointerException.class)
     public void whenTypeIntShouldReturnException() {
         SimpleArray<Integer> simple = new SimpleArray<>(4);
         simple.add(2);
