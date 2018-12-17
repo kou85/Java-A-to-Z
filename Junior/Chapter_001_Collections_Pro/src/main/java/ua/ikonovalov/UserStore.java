@@ -5,4 +5,6 @@ package ua.ikonovalov;
  */
 public class UserStore<User> {
 
+
+
 }

@@ -11,6 +11,6 @@ public abstract class Base {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 }
