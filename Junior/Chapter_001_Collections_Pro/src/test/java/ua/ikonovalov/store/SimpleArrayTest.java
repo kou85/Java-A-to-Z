@@ -1,6 +1,8 @@
-package ua.ikonovalov;
+package ua.ikonovalov.store;
 
 import org.junit.Test;
+import ua.ikonovalov.store.SimpleArray;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 

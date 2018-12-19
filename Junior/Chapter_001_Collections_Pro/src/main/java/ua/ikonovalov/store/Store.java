@@ -1,4 +1,4 @@
-package ua.ikonovalov;
+package ua.ikonovalov.store;
 
 /**
  * Created by Strong on 09.12.18.
@@ -16,7 +16,7 @@ public interface Store<T extends Base> {
      * @param model
      * @return
      */
-    boolean replace(String id, T model);
+    boolean update(String id, T model);
 
     /**
      *
