@@ -3,10 +3,6 @@ package ua.ikonovalov.store;
 /**
  * Created by Strong on 09.12.18.
  */
-public class UserStore<User> {
-
-    SimpleArray simple = new SimpleArray(20);
-
-
+public class UserStore extends BaseStore<User> {
 
 }

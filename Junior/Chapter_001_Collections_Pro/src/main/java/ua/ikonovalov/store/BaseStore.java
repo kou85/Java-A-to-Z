@@ -3,7 +3,7 @@ package ua.ikonovalov.store;
 /**
  * Created by Strong on 18.12.18.
  */
-public abstract class BaseStore<T> implements Store {
+public abstract class BaseStore<T extends Base> implements Store<T> {
 
     SimpleArray<T> simple = new SimpleArray(20);
 
@@ -15,6 +15,8 @@ public abstract class BaseStore<T> implements Store {
 
     @Override
     public boolean update(String id, T model) {
+        boolean value = false;
+
         return false;
     }
 
