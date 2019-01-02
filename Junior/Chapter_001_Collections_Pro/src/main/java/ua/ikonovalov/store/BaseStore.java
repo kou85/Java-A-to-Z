@@ -1,7 +1,10 @@
 package ua.ikonovalov.store;
 
 /**
- * Created by Strong on 18.12.18.
+ * class BaseStore
+ * @author ikonovalov
+ * @since 18.12.18.
+ * @version 1.0
  */
 public abstract class BaseStore<T extends Base> implements Store<T> {
 
@@ -16,17 +19,44 @@ public abstract class BaseStore<T extends Base> implements Store<T> {
     @Override
     public boolean update(String id, T model) {
         boolean value = false;
-
-        return false;
+        int index = 0;
+        for (T t : simple) {
+            if (t != null && id.equals(t.getId())) {
+                simple.set(index, model);
+                value = true;
+                break;
+            }
+            index++;
+        }
+        return value;
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        boolean value = false;
+        int index = 0;
+        for (T t: simple) {
+            if (t != null && id.equals(t.getId())) {
+                simple.delete(index);
+                value = true;
+                break;
+            }
+            index++;
+        }
+        return value;
     }
 
     @Override
     public T findById(String id) {
-        return null;
+        int index = 0;
+        T value = null;
+        for (T t : simple) {
+            if (t != null && id.equals(t.getId())) {
+                value = simple.get(index);
+                break;
+            }
+            index++;
+        }
+        return value;
     }
 }
