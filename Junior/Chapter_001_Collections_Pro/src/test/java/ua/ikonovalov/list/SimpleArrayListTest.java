@@ -41,6 +41,7 @@ public class SimpleArrayListTest {
     @Test
 
     public void whenDeleteFirstElementThenUseGetZeroResultTwo() {
+        list.delete();
         assertThat(list.get(0), is(2));
     }
 }
