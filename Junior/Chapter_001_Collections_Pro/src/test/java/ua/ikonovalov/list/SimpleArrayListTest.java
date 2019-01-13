@@ -20,6 +20,7 @@ public class SimpleArrayListTest {
         list.add(2);
         list.add(3);
 
+
     }
 
 
@@ -43,5 +44,7 @@ public class SimpleArrayListTest {
     public void whenDeleteFirstElementThenUseGetZeroResultTwo() {
         list.delete();
         assertThat(list.get(0), is(2));
+        assertThat(list.get(1), is(1));
+
     }
 }

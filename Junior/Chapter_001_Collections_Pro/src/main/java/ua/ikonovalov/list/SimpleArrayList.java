@@ -4,6 +4,7 @@ package ua.ikonovalov.list;
  * Created by Strong on 03.01.19.
  */
 public class SimpleArrayList<e> {
+
     private int size;
     private Node<e> first;
 
@@ -17,10 +18,11 @@ public class SimpleArrayList<e> {
  * Реализовать метод удаления первого элемент в списке.
  */
     public e delete() {
-        Node<e> result = this.first;
-        result = result.next;
+       //Node<e> result = this.first;
+        this.first = this.first.next;
+       // this.first = result.next;
 
-        return result.date;
+        return this.first.date;
     }
 
 /**
