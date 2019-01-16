@@ -3,13 +3,13 @@ package ua.ikonovalov.list;
 /**
  * Created by Strong on 03.01.19.
  */
-public class SimpleArrayList<e> {
+public class SimpleArrayList<E> {
 
     private int size;
-    private Node<e> first;
+    private Node<E> first;
 
-    public void add(e date) {
-        Node<e> newLink = new Node<>(date);
+    public void add(E date) {
+        Node<E> newLink = new Node<>(date);
         newLink.next = this.first;
         this.first = newLink;
         this.size++;
@@ -17,20 +17,22 @@ public class SimpleArrayList<e> {
  /**
  * Реализовать метод удаления первого элемент в списке.
  */
-    public e delete() {
-       //Node<e> result = this.first;
-        this.first = this.first.next;
-       // this.first = result.next;
-
-        return this.first.date;
+    public E delete() {
+        E result = null;
+        if (size > 0) {
+            Node<E> temp = this.first;
+            result = temp.date;
+            this.first = temp.next;
+                 }
+        return result;
     }
 
 /**
  * Метод получения элемента по индексу.
  */
 
-    public e get(int index) {
-        Node<e> result = this.first;
+    public E get(int index) {
+        Node<E> result = this.first;
         for (int i = 0; i < index; i++) {
           result = result.next;
         }
@@ -50,12 +52,13 @@ public class SimpleArrayList<e> {
  * Класс предназначен для хранения данных.
  */
 
-    private static class Node<e> {
-        e date;
-        Node<e> next;
-        Node(e date) {
+    private static class Node<E> {
+        E date;
+        Node<E> next;
+        Node(E date) {
             this.date = date;
         }
+
     }
 }
 
