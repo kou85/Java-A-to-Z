@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Strong on 13.01.19.
@@ -29,8 +30,8 @@ public class SimpleDynamicArrayList<E>  {
     }
 
     private void checkCompacity() {
-        int newSize = (container.length-1) * 2;
-        if (container.length-1 == index) {
+        int newSize = (container.length - 1) * 2;
+        if (container.length - 1 == index) {
             this.container = Arrays.copyOf(this.container, newSize);
             this.modCount++;
         }
@@ -38,7 +39,7 @@ public class SimpleDynamicArrayList<E>  {
 
     public E get(int index) {
         outOfNumberOfElements(index);
-        return  (E)this.container[index];
+        return  (E) this.container[index];
     }
 
     public void set(int index, E value) {
@@ -52,21 +53,34 @@ public class SimpleDynamicArrayList<E>  {
         }
     }
 
-
+    /**
+     * Iterator class SimpleDynamicArrayList
+     */
     private class Itr implements Iterator<E> {
-        int expectModCount = modCount;
+        int expectModCount = 0;
 
-
+        /**
+         * Method checks has next element in array
+         * @return true if has next element, false if haven't next element
+         */
         @Override
         public boolean hasNext() {
-            boolean valid = false;
-
-            return false;
+          return expectModCount < modCount;
         }
 
+        /**
+         * Method return next element in array
+         * @return next element in array
+         */
         @Override
         public E next() {
-            return null;
+            try {
+                expectModCount++;
+                E next = get(expectModCount - 1);
+                return next;
+            } catch (IndexOutOfBoundsException er) {
+                throw new NoSuchElementException("No ");
+            }
         }
     }
 
