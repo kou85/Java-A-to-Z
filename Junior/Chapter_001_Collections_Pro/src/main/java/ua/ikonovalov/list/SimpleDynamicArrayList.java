@@ -44,8 +44,9 @@ public class SimpleDynamicArrayList<E> implements Iterable  {
      * Check or step up Array
      */
     private void checkCompacity() {
-        int newSize = (container.length - 1) * 2;
+
         if (container.length - 1 == index) {
+            int newSize = (container.length) * 2;
             this.container = Arrays.copyOf(this.container, newSize);
 
         }
@@ -117,14 +118,14 @@ public class SimpleDynamicArrayList<E> implements Iterable  {
          */
         @Override
         public E next() {
-            try {
+            if (!hasNext()) {
+                throw new NoSuchElementException("No more elements in list");
+            }
                 i++;
                 E next = get(i - 1);
                 return next;
-            } catch (IndexOutOfBoundsException er) {
-                throw new NoSuchElementException("No more elements in list");
-            }
-        }
+         }
+
     }
 
 
