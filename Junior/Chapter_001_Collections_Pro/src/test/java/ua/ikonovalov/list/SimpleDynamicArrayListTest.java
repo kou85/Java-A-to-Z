@@ -26,7 +26,7 @@ public class SimpleDynamicArrayListTest {
 
     }
     @Test
-    public void whenCreatedArrayWhithSizeAndAddElementsThenSizeThree() {
+    public void whenCreatedArrayWithSizeAndAddElementsThenSizeThree() {
         SimpleDynamicArrayList list = new SimpleDynamicArrayList(3);
         int expectedListLength = 3;
         list.add(0);
@@ -35,15 +35,17 @@ public class SimpleDynamicArrayListTest {
         assertThat(list.size(), is(expectedListLength));
 
     }
-    @Ignore
+
     @Test
-    public void whenCreatedArrayWhithSizeAndAddElementsMoreThenSize6() {
+    public void whenCreatedArrayWithSizeAndAddElementsMoreThenSize6() {
         SimpleDynamicArrayList list = new SimpleDynamicArrayList(3);
         int expectedListLength = 6;
         list.add(0);
         list.add(1);
         list.add(2);
         list.add(3);
+        list.add(4);
+        list.add(4);
         assertThat(list.size(), is(expectedListLength));
     }
 
