@@ -121,9 +121,7 @@ public class SimpleDynamicArrayList<E> implements Iterable  {
             if (!hasNext()) {
                 throw new NoSuchElementException("No more elements in list");
             }
-                i++;
-                E next = get(i - 1);
-                return next;
+                 return (E) container[i++];
          }
 
     }
