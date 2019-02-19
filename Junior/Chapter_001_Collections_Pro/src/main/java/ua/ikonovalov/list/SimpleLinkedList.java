@@ -4,8 +4,10 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * Created by Strong on 08.02.19.
+/** Class SimpleLinkedList.
+ * @author ikonovalov.
+ * @since  08.02.19.
+ * @version 1.0.
  */
 public class SimpleLinkedList<E> {
     int size = 0;
@@ -13,47 +15,86 @@ public class SimpleLinkedList<E> {
     private Node<E> last;
     private int modCount;
 
+    /**
+     * It add new date in last position
+     * @param date is being added
+     */
     public void add(E date) {
-        Node<E> newlink = new Node<>(date);
-        newlink.next = first;
-        first = newlink;
+        Node<E> prev = last;
+        Node<E> newlink = new Node<>(prev, date, null);
+        this.last = newlink;
+        if (first == null) {
+            this.first = newlink;
+        } else {
+            prev.next = newlink;
+        }
         this.size++;
         this.modCount++;
     }
 
-    public E get(int index) {
-        Node<E> result = this.first;
-        for (int i = 0; i < index ; i++) {
-            result = result.next;
-        }
-        return result.date;
-    }
-
+    /**
+     * It gets size.
+     * @return size.
+     */
     public int size() {
         return this.size();
     }
 
-
-
-
-    private class Node<E> {
-        E date;
-        Node<E> next;
-        Node<E> previous;
-        Node(E date) {
-          this.date = date;
-        }
-
-    }
     /**
-     * Iterator class SimpleDynamicArrayList
+     * It gets the date in node by index.
+     * @param index value.
+     * @return date by index.
+     */
+    public E get(int index) {
+        outBounds(index);
+        return getNode(index).date;
+    }
+
+    /**
+     * It gets the node by index
+     * @param index value.
+     * @return Node by index
+     */
+    public Node<E> getNode(int index) {
+        Node<E> result = null;
+        Node<E> temp = first;
+        for (int i = 0; i < size; i++) {
+            if (index == i) {
+                result = temp;
+                break;
+            }
+            temp = temp.next;
+        } return result;
+    }
+
+    /**
+     * Check the index availability.
+     * @param index to check.
+     * @throws IndexOutOfBoundsException
+     */
+    private void outBounds(int index) throws IndexOutOfBoundsException {
+        if (index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
+    /**
+     * Return an iterator items.
+     * @return an iterator.
+     */
+    public Iterator<E> iterator() {
+        return new SimpleLinkedList.Itr();
+    }
+
+    /**
+     * Iterator class SimpleLinkedList
      */
     private class Itr implements Iterator<E> {
         int expectModCount = modCount;
-        int i = 0;
+        int cursor = 0;
 
         /**
-         * Method checks has next element in array
+         * Method checks has next element in container
          * @return true if has next element, false if haven't next element
          */
         @Override
@@ -61,19 +102,35 @@ public class SimpleLinkedList<E> {
             if (expectModCount != modCount) {
                 throw new ConcurrentModificationException();
             }
-            return i < index;
+            return cursor < size;
         }
 
         /**
-         * Method return next element in array
-         * @return next element in array
+         * Method return next element in container
+         * @return next element in container
          */
         @Override
         public E next() {
             if (!hasNext()) {
-                throw new NoSuchElementException("No more elements in list");
+                throw new NoSuchElementException("No more elements in linkedList");
             }
-            return (E) container[i++];
+            return get(cursor++);
+        }
+    }
+
+    /**
+     * Class container linkedList
+     * @param <E> generic.
+     */
+    private class Node<E> {
+        private E date;
+        private Node<E> next;
+        private Node<E> prev;
+        Node(Node<E> next, E date, Node<E> prev) {
+            this.date = date;
+            this.next = next;
+            this.prev = prev;
+
         }
 
     }
