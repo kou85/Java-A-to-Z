@@ -33,6 +33,24 @@ public class SimpleLinkedList<E> {
     }
 
     /**
+     * Method remove element
+     * @param index element to remove
+     */
+    public void remove(int index) {
+        outBounds(index);
+        Node<E> result = getNode(index);
+        if (result.prev != null) {
+            result.prev.next = result.next;
+        }
+        if (result.next != null) {
+            result.next.prev = result.prev;
+        }
+        size--;
+        modCount++;
+
+    }
+
+    /**
      * It gets size.
      * @return size.
      */
