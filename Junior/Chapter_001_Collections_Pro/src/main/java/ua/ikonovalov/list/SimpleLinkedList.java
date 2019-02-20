@@ -132,7 +132,11 @@ public class SimpleLinkedList<E> {
             if (!hasNext()) {
                 throw new NoSuchElementException("No more elements in linkedList");
             }
-            return get(cursor++);
+            Node<E> temp = first;
+            E res = temp.date;
+            temp = temp.next;
+
+            return res;
         }
     }
 
