@@ -6,14 +6,17 @@ package ua.ikonovalov.list;
  * @version 1.0
  * @since  21.02.19.
  */
-public class SimpleQueue<T> extends SimpleLinkedList<T> {
+public class SimpleQueue<T> {
+
+    SimpleStack value;
+    SimpleStack<T> stack = new SimpleStack();
 
     /**
      * Add value
      * @param value added
      */
     public void push(T value) {
-        add(value);
+        stack.add(value);
     }
 
     /**
@@ -21,8 +24,8 @@ public class SimpleQueue<T> extends SimpleLinkedList<T> {
      * @return first element
      */
     public T poll() {
-        T result = this.get(0);
-        remove(0);
+        T result = stack.get(0);
+        stack.remove(0);
         return result;
     }
 }
