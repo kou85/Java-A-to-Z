@@ -34,7 +34,7 @@ public class SimpleDynamicArrayList<E> implements Iterable  {
      * Add elements in Array
      * @param value
      */
-    void add(E value) {
+    public void add(E value) {
         checkCompacity();
         this.container[index++] = value;
         this.modCount++;
