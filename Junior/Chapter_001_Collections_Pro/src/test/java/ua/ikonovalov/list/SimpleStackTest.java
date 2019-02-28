@@ -30,7 +30,7 @@ public class SimpleStackTest {
     /**
      * Test for poll method.
      */
-    @Ignore
+
     @Test
     public void whenPollThenResultFirstElement() {
         assertThat(stack.poll(), is(3));

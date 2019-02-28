@@ -55,7 +55,7 @@ public class SimpleLinkedList<E> {
      * @return size.
      */
     public int size() {
-        return this.size();
+        return this.size;
     }
 
     /**
