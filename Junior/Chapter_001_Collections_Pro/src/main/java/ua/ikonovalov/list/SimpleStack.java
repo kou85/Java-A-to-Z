@@ -15,6 +15,9 @@ public class SimpleStack<T> extends SimpleLinkedList<T> {
     public void push(T value) {
         add(value);
     }
+    public int size() {
+        return size();
+    }
 
     /**
      * Get last element and after delete.

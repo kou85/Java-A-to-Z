@@ -8,24 +8,33 @@ package ua.ikonovalov.list;
  */
 public class SimpleQueue<T> {
 
-    SimpleStack value;
-    SimpleStack<T> stack = new SimpleStack();
+    SimpleStack<T> out = new SimpleStack();
+    SimpleStack<T> in = new SimpleStack();
 
     /**
      * Add value
      * @param value added
      */
     public void push(T value) {
-        stack.add(value);
+        in.add(value);
     }
 
     /**
      * Get first element and after delete.
      * @return first element
      */
+
+
     public T poll() {
-        T result = stack.get(0);
-        stack.remove(0);
+        while (in.size() > 0) {
+            out.add(in.poll());
+        }
+        T result = out.poll();
+        while (out.size() > 0) {
+            in.add(out.poll());
+        }
         return result;
     }
+
+
 }

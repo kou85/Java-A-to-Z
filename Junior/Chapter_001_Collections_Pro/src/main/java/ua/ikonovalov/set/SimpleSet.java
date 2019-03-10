@@ -7,7 +7,7 @@ import ua.ikonovalov.list.SimpleDynamicArrayList;
  */
 public class SimpleSet<T> {
 
-    SimpleDynamicArrayList<T> list = new SimpleDynamicArrayList(10);
+    private SimpleDynamicArrayList<T> list = new SimpleDynamicArrayList(10);
 
     public void add(T value) {
         if (list != null && checkDublicate(value)) {
@@ -17,11 +17,16 @@ public class SimpleSet<T> {
 
     private boolean checkDublicate(T value) {
         boolean result = true;
-        for ( int i = 0; i < list.size() - 1; i++) {
+        for (int i = 0; i < list.size() - 1; i++) {
             if (list.get(i) == value) {
                 result = false;
+                break;
             }
         } return result;
+    }
+
+    private T get(int value) {
+        return list.get(value);
     }
 
 
