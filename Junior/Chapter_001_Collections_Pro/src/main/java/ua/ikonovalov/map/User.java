@@ -33,14 +33,20 @@ public class User {
     }
 
 
-
     @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + children;
-        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (children != user.children) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        return birthday != null ? birthday.equals(user.birthday) : user.birthday == null;
+
     }
+
+
 
     public static void main(String[] arg) {
         User user1 = new User("Tom", 2, new GregorianCalendar(2011, 07, 11));
@@ -50,8 +56,8 @@ public class User {
         map.put(user2, "two");
 
         System.out.println("Первый юзер: " + map.get(user1) + " Второй юзер: " + map.get(user2));
-        //Результат: выводит опять оба объекта, хоть хєш коді одинаковые но equals выдает false т.к.
-        // по умолчанию его реализация сравнивает ссылки на один и тот же объект а не содержимое. .
+        //Результат: выводит опять оба объекта, equals выдает true сравнивает содержимое объектов а
+        // hashCode выдает false т.к. умолчанию его реализация генерирует разные коды при создании нового объекта.
 
 
     }
