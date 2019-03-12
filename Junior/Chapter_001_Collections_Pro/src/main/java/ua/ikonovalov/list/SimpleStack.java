@@ -16,7 +16,7 @@ public class SimpleStack<T> extends SimpleLinkedList<T> {
         add(value);
     }
     public int size() {
-        return size();
+        return super.size();
     }
 
     /**
