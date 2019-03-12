@@ -20,6 +20,28 @@ public class User {
         this.birthday = birthday;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getChildren() {
+        return children;
+    }
+
+    public Calendar getBirthday() {
+        return birthday;
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + children;
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        return result;
+    }
+
     public static void main(String[] arg) {
         User user1 = new User("Tom", 2, new GregorianCalendar(2011, 07, 11));
         User user2 = new User("Tom", 2, new GregorianCalendar(2011, 07, 11));
@@ -28,7 +50,8 @@ public class User {
         map.put(user2, "two");
 
         System.out.println("Первый юзер: " + map.get(user1) + " Второй юзер: " + map.get(user2));
-        //Результат: выводит оба объекта т.к. хоть у них поля одинаковые но сами объекты разные.
+        //Результат: выводит опять оба объекта, хоть хєш коді одинаковые но equals выдает false т.к.
+        // по умолчанию его реализация сравнивает ссылки на один и тот же объект а не содержимое. .
 
 
     }
