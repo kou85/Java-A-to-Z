@@ -4,7 +4,7 @@ import ua.ikonovalov.list.SimpleDynamicArrayList;
 import java.util.Iterator;
 
 /**
- * Class SimpleDynamicArrayList using composition
+ * Class SimpleSet using composition
  * @author ikonovalov
  * @since  28.02.19.
  */
@@ -32,7 +32,7 @@ public class SimpleSet<T> {
     private boolean checkDuplicate(T value) {
         boolean result = true;
         for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i) == value) {
+            if (list.get(i).equals(value)) {
                 result = false;
                 break;
             }
