@@ -45,5 +45,29 @@ public class Node<T> {
             }
             return found;
         }
+
+        /**
+         * Algorithm tort and rabbit(Floyd)
+         * @param first
+         * @return true or false
+         */
+        public boolean hasCycleFloyd(Node<T> first) {
+            Node<T> tort = first;
+            Node<T> rabbit = first.next;
+            boolean found = false;
+            while (true) {
+                if (rabbit == null || tort == null) {
+                    break;
+                }
+                if (tort.equals(rabbit)) {
+                    found = true;
+                    break;
+                } else {
+                    tort = tort.next;
+                    rabbit = rabbit.next.next;
+                }
+            }
+            return found;
+        }
     }
 }

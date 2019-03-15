@@ -102,7 +102,7 @@ public class SimpleMap<T, V> {
     boolean deleted(T key) {
         boolean result = true;
         int index = hashFunction(key);
-        if(key != null && index != -1) {
+        if (key != null && index != -1) {
             table[index] = null;
         } else {
             result = false;
@@ -121,7 +121,7 @@ public class SimpleMap<T, V> {
         return hash % table.length;
     }
 
-    public Iterator iterator(){
+    public Iterator iterator() {
         return new Itr();
     }
 
