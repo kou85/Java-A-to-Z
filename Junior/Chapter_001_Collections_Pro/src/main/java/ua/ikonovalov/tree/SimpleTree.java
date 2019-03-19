@@ -71,6 +71,28 @@ public class SimpleTree<E extends Comparable<E>> {
     }
 
     /**
+     * Method check amount leaves
+     * @return true or false
+     */
+    public boolean isBinary() {
+        boolean result = true;
+        Queue<Node<E>> data = new LinkedList<>();
+        data.offer(this.root);
+        while (!data.isEmpty()) {
+            Node<E> el = data.poll();
+            List<Node<E>> children = el.leaves();
+            if (children.size() > 2) {
+                result = false;
+                break;
+            }
+            for (Node<E> child : children) {
+                data.offer(child);
+            }
+        }
+        return result;
+    }
+
+    /**
      * class Iterator
      */
     private class Itr implements Iterator<E> {
