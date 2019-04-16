@@ -1,6 +1,9 @@
 package ua.ikonovalov;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 /**
  * Created by Strong on 20.03.19.
@@ -10,9 +13,14 @@ public class Analize {
 
 
     public Info diff(List<User> previous, List<User> current) {
-        List<User> prev;
-        List<User> cur;
+        Map<Integer, String> map = new HashMap<>();
 
+        int added = 0;
+        int changed = 0;
+
+
+
+        return null;
     }
 
     public static class User {
