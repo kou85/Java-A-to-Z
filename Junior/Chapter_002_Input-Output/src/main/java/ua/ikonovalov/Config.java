@@ -27,7 +27,8 @@ public class Config {
         }
 
         try {
-            for (String line; (line = br.readLine()) != null; ) {
+            String line;
+            while ((line = br.readLine()) != null) {
                 String[] str = line.split("=", 2);
                 this.value.put(str[0], str[1]);
             }
