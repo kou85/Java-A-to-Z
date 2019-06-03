@@ -41,22 +41,29 @@ public class Analize {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             User user = (User) o;
 
-            if (id != user.id) return false;
+            if (id != user.id) {
+                return false;
+            }
             return name != null ? name.equals(user.name) : user.name == null;
 
         }
 
         @Override
         public String toString() {
-            return "User{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    '}';
+            return "User{"
+                    + "id=" + id
+                    + ", name='" + name + '\''
+                    + '}';
         }
     }
 
@@ -86,13 +93,21 @@ public class Analize {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Info info = (Info) o;
 
-            if (added != info.added) return false;
-            if (changed != info.changed) return false;
+            if (added != info.added) {
+                return false;
+            }
+            if (changed != info.changed) {
+                return false;
+            }
             return deleted == info.deleted;
 
         }

@@ -12,6 +12,8 @@ public class Config {
     private final String path;
     private final Map<String, String> value = new HashMap<String, String>();
 
+
+
     public Config(final String path) {
         this.path = path;
     }
@@ -19,24 +21,19 @@ public class Config {
     public void load() {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("ua/ikonovalov/app.properties"));
+            br = new BufferedReader(new FileReader("D:\\Java\\Projects\\Java-A-to-Z\\Junior\\Chapter_002_Input-Output\\src\\main\\java\\ua\\ikonovalov\\app.properties"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        int character;
-        StringBuilder sb = new StringBuilder();
-        try {
-            while ((character = br.read()) != -1) {
-                char ch = (char) character;
-                if (character == ' ' || ch == '#' || ch == '=') break;
-                sb.append(ch);
 
+        try {
+            for (String line; (line = br.readLine()) != null; ) {
+                String[] str = line.split("=", 2);
+                this.value.put(str[0], str[1]);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
 
     }
 
@@ -56,5 +53,14 @@ public class Config {
 
     public static void main(String[] args) {
         System.out.println(new Config("app.properties"));
+
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public Map<String, String> getValue() {
+        return value;
     }
 }
