@@ -21,7 +21,7 @@ public class Config {
     public void load() {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("D:\\Java\\Projects\\Java-A-to-Z\\Junior\\Chapter_002_Input-Output\\src\\main\\java\\ua\\ikonovalov\\app.properties"));
+            br = new BufferedReader(new FileReader("app.properties"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -29,8 +29,10 @@ public class Config {
         try {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] str = line.split("=", 2);
-                this.value.put(str[0], str[1]);
+                if (line.contains("=")) {
+                    String[] str = line.split("=", 2);
+                    this.value.put(str[0], str[1]);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
