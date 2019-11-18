@@ -9,8 +9,9 @@ import java.util.List;
  * @Since 05.09.19.
  */
 public class Analizy {
-    public void unavailable(String source, String target) {
-        try(BufferedReader br = new BufferedReader(new FileReader(source))) {
+    public void unavailable(InputStream source, String target) {
+       // try(BufferedReader br = new BufferedReader(new FileReader(source))) {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(source))) {
             List<String> list = new ArrayList<>();
             boolean checkStatus = true;
                 while(br.ready()) {
