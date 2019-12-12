@@ -20,7 +20,12 @@ public class Analizy {
                         if (cheak.contains("400") || cheak.contains("500")) {
                             list.add(cheak);
                             checkStatus = false;
-
+                        }
+                    }
+                    if (!checkStatus) {
+                        if (cheak.contains("200") || cheak.contains("300")) {
+                            list.add(cheak);
+                            checkStatus = true;
                         }
                     }
             }
