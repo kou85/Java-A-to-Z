@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class Analizy {
     public void unavailable(InputStream source, String target) {
-       // try(BufferedReader br = new BufferedReader(new FileReader(source))) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(source))) {
             List<String> list = new ArrayList<>();
             boolean checkStatus = true;
@@ -20,23 +19,32 @@ public class Analizy {
                         if (cheak.contains("400") || cheak.contains("500")) {
                             list.add(cheak);
                             checkStatus = false;
-
+                        }
+                    }
+                    if (!checkStatus) {
+                        if (cheak.contains("200") || cheak.contains("300")) {
+                            list.add(cheak);
+                            checkStatus = true;
                         }
                     }
             }
-            try (PrintWriter pr = new PrintWriter(new FileOutputStream(target)) {
-            }) {
-                 for (String str : list) {
-                     pr.write(str);
-                     pr.write(System.lineSeparator());
-                 }
-             }
-
-            } catch (FileNotFoundException fe) {
-                 fe.printStackTrace();
-             } catch (IOException io) {
+          writeFile(target, list);
+        }  catch (IOException io) {
             io.printStackTrace();
+        }
+    }
+
+
+    private void writeFile(String target, List<String> list) {
+        try (PrintWriter pr = new PrintWriter(new FileOutputStream(target)) {
+        }) {
+            for (String str : list) {
+                pr.write(str);
+                pr.write(System.lineSeparator());
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
