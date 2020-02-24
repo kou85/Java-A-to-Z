@@ -115,9 +115,7 @@ public class Search {
                     queue.offer(deep);
                 }
             }
-/*            if (file.isFile() && !this.equalityExtension(file, ext1)) {
-                rs.add(file);
-            }*/
+
         }
 
 

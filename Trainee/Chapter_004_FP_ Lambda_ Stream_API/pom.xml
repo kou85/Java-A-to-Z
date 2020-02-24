@@ -1,23 +1,15 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>Java-A-to-Z</artifactId>
+        <artifactId>Trainee</artifactId>
         <groupId>ua.ikonovalov</groupId>
         <version>2.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>Chapter_004_FP_ Lambda_ Stream_API</artifactId>
+    <version>2.0</version>
 
-    <artifactId>Trainee</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>Chapter_001_Basic_Syntax</module>
-        <module>Chapter_002_OOP</module>
-        <module>Chapter_003_Collections_Lite</module>
-        <module>Chapter_004_FP_ Lambda_ Stream_API</module>
-
-    </modules>
-
-
+    
 </project>
