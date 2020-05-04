@@ -10,20 +10,26 @@ import java.util.List;
  */
 public class Analizy {
     public void unavailable(InputStream source, String target) {
+   // public void unavailable(InputStream source, File target) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(source))) {
             List<String> list = new ArrayList<>();
             boolean checkStatus = true;
+            String temp = null;
                 while(br.ready()) {
                     String cheak = br.readLine();
+
                     if (checkStatus) {
                         if (cheak.contains("400") || cheak.contains("500")) {
-                            list.add(cheak);
+                            cheak = cheak.substring(cheak.indexOf(" "), cheak.length());
+                           // list.add(cheak);
+                            temp = cheak;
                             checkStatus = false;
                         }
                     }
                     if (!checkStatus) {
                         if (cheak.contains("200") || cheak.contains("300")) {
-                            list.add(cheak);
+                            cheak = cheak.substring(cheak.indexOf(" "));
+                            list.add(temp + ";" + cheak);
                             checkStatus = true;
                         }
                     }
@@ -35,8 +41,10 @@ public class Analizy {
     }
 
 
+   // private void writeFile(String target, List<String> list) {
     private void writeFile(String target, List<String> list) {
-        try (PrintWriter pr = new PrintWriter(new FileOutputStream(target)) {
+      //  try (PrintWriter pr = new PrintWriter(new FileOutputStream(target)) {
+        try (PrintWriter pr = new PrintWriter(target) {
         }) {
             for (String str : list) {
                 pr.write(str);
@@ -48,7 +56,7 @@ public class Analizy {
     }
 
     public static void main(String[] args) {
-        try (PrintWriter out = new PrintWriter(new FileOutputStream("target.csv"))) {
+        try (PrintWriter out = new PrintWriter(new FileOutputStream("target66.csv"))) {
             out.println("15:01:30;15:02:32");
             out.println("15:10:30;23:12:32");
         } catch (Exception e) {

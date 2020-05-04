@@ -1,4 +1,4 @@
-package java.ua.ikonovalov;
+package ua.ikonovalov;
 
 /**
  * @author Konovalov Ivan
